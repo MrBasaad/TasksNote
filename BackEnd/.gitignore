@@ -6,3 +6,4 @@ BackEnd/.env
 BackEnd/env
 ..env
 *.env
+.env
