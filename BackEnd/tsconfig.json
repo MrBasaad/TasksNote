@@ -1,0 +1,64 @@
+{
+      "compilerOptions": {
+        /* 1. إعدادات المسارات (File Layout) */
+        "rootDir": ".", 
+        "outDir": "./dist",
+        "noEmit": false,
+        "allowJs": true,
+        "ignoreDeprecations": "6.0",
+        // "ignoreDeprecations": "5.0",
+        "emitDeclarationOnly": false,
+
+    /* 2. إعدادات البيئة (Environment) */
+    "module": "ESNext", /* تم التغيير من nodenext لضمان عمل tsc-alias والـ Aliases بسهولة */
+    "moduleResolution": "Bundler", /* تم التغيير من NodeNext لحل خطأ TS2835 (الذي يطالب بامتداد .js) */
+    "allowImportingTsExtensions": false, 
+    "target": "ESNext",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["ESNext"],
+    "types": ["node"],
+
+    /* 3. مخرجات إضافية */
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    /* 4. إعدادات التحقق الصارمة */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "skipLibCheck": true,
+
+    /* 5. إعدادات الـ Aliases (Paths) */
+    "baseUrl": ".", 
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["src/*"],
+      "@controllers/*": ["src/controllers/*"],
+      "@models/*": ["src/models/*"],
+      "@routes/*": ["src/routes/*"],
+      "@types/*": ["src/types/*"],
+      "@servers/*": ["servers/*"]
+    },
+
+    /* 6. إعدادات إضافية */
+    "jsx": "react-jsx",
+    "isolatedModules": true,
+    "moduleDetection": "force"
+  },
+  "include": [
+    "src/**/*",
+    "servers/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
