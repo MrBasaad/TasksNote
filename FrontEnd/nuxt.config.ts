@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    baseURL: '/', // تأكد أنها '/' إلا إذا كنت ترفع المشروع في مجلد فرعي
+    buildAssetsDir: '/_nuxt/' // المسار الافتراضي للتنسيقات
+  },
     devServer: {
     port: 9999,
     host: 'localhost',

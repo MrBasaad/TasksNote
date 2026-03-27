@@ -5,8 +5,8 @@
         "outDir": "./dist",
         "noEmit": false,
         "allowJs": true,
-        "ignoreDeprecations": "6.0",
-        // "ignoreDeprecations": "5.0",
+        // "ignoreDeprecations": "6.0",
+        "ignoreDeprecations": "5.0",
         "emitDeclarationOnly": false,
 
     /* 2. إعدادات البيئة (Environment) */
