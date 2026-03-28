@@ -87,8 +87,6 @@ onMounted(async () => {
 </template>
 <style lang="scss" scoped>
 .mains {
-  width: 100vw;
-  min-height: 100vh;
   background: darkcyan;
 }
 .headersdiv {
@@ -96,99 +94,64 @@ onMounted(async () => {
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 12vh;
-  /* background: rebeccapurple; */
   margin: auto;
 }
-
 .navcs {
   display: flex;
   position: absolute;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 12vh;
-  /* background: red; */
   margin: auto;
-  /* top: 5vh; */
 }
-
 .invoNumberDiv {
   display: flex;
   position: absolute;
   justify-content: center;
   align-items: center;
-  width: 20vw;
-  height: 6vh;
   background: #414242;
-  border-radius: 1vw;
-  left: 3vw;
   color: #fff;
-  /* left: 2vw; */
-  /* margin: 1vw; */
 }
-
 .editOrSaveVtnDiv {
   display: flex;
   position: absolute;
   justify-content: center;
   align-items: center;
-  width: 20vw;
-  height: 6vh;
-  /* background: darkgoldenrod; */
 }
-
 .editbtn {
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 8vw;
-  height: 6vh;
   background-color: transparent;
   outline: none;
   border: none;
   cursor: pointer;
-  margin: 0vh 0.5vw;
   background: #414242;
-  border-radius: 1vw;
   color: #fff;
 }
-
 .savebtn {
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 8vw;
-  height: 6vh;
   background-color: transparent;
   outline: none;
   border: none;
   cursor: pointer;
-  margin: 0vh 0.5vw;
   background: #414242;
-  border-radius: 1vw;
   color: #fff;
 }
 .maintablediv {
   display: flex;
   flex-direction: column;
-  width: 100vw;
   align-items: center;
   margin: auto;
-  margin-top: 1vw;
   direction: rtl;
 }
-
 .tableDatadiv {
   border-collapse: collapse;
   table-layout: fixed;
-  width: 80vw;
-  margin-top: 2vh;
 }
-
 .theadDiv {
   background-color: #414242;
   color: white;
@@ -196,50 +159,27 @@ onMounted(async () => {
 .tableDatadiv th,
 .tableDatadiv td {
   text-align: center;
-  padding: 0.5vh 0.5vw;
 }
-
 .trowforheaad {
   border-collapse: collapse;
   table-layout: fixed;
-  height: 5.5vh;
-  font-size: 0.95em;
-  font-weight: 800;
   text-align: center;
 }
-.rownumhd {
-}
-.datehd {
-  width: 7.5vw;
-}
 .texthead {
-  /* background-color: aliceblue; */
-  width: 50vw;
   margin: auto;
   justify-content: center;
   align-items: center;
 }
 .tikettimehd {
-  /* background: indigo; */
-  /* display: flex; */
   position: relative;
-  width: 7.5vw;
   justify-content: center;
   align-items: center;
   margin: auto;
-  /* background: #000; */
 }
-
 .sendBTN {
   display: flex;
   position: fixed;
   margin: auto;
-  margin-bottom: 6vh;
-  bottom: 0vh;
-  left: 0vw;
-  margin-left: 1vw;
-  width: 10vw;
-  height: 5vh;
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -247,21 +187,620 @@ onMounted(async () => {
   outline: none;
   border: none;
   background: #414242;
-  border-radius: 1vw;
   color: #fff;
 }
-
 @media (max-width: 480px) {
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
-}
-@media (min-width: 992px) and (max-width: 1199px) {
+  .mains {
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .headersdiv {
+    width: 100vw;
+    height: 12vh;
+  }
+  .navcs {
+    width: 100vw;
+    height: 12vh;
+  }
+  .invoNumberDiv {
+    width: 20vw;
+    height: 6vh;
+    border-radius: 1vw;
+    left: 3vw;
+  }
+  .editOrSaveVtnDiv {
+    width: 20vw;
+    height: 6vh;
+  }
+  .editbtn {
+    width: 8vw;
+    height: 6vh;
+    margin: 0vh 0.5vw;
+    border-radius: 1vw;
+  }
+  .savebtn {
+    width: 8vw;
+    height: 6vh;
+    margin: 0vh 0.5vw;
+    border-radius: 1vw;
+  }
+  .maintablediv {
+    width: 100vw;
+    margin-top: 1vw;
+  }
+  .tableDatadiv {
+    width: 80vw;
+    margin-top: 2vh;
+  }
+  .tableDatadiv th,
+  .tableDatadiv td {
+    padding: 0.5vh 0.5vw;
+  }
+  .trowforheaad {
+    height: 5.5vh;
+    font-size: 0.95em;
+    font-weight: 800;
+  }
+  .datehd {
+    width: 7.5vw;
+  }
+  .texthead {
+    width: 50vw;
+  }
+  .tikettimehd {
+    width: 7.5vw;
+  }
+  .sendBTN {
+    margin-bottom: 6vh;
+    bottom: 0vh;
+    left: 0vw;
+    margin-left: 1vw;
+    width: 10vw;
+    height: 5vh;
+    z-index: 1000;
+    border-radius: 1vw;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
+  .mains {
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .headersdiv {
+    width: 100vw;
+    height: 12vh;
+  }
+  .navcs {
+    width: 100vw;
+    height: 12vh;
+  }
+  .invoNumberDiv {
+    width: 20vw;
+    height: 6vh;
+    border-radius: 1vw;
+    left: 3vw;
+  }
+  .editOrSaveVtnDiv {
+    width: 20vw;
+    height: 6vh;
+  }
+  .editbtn {
+    width: 8vw;
+    height: 6vh;
+    margin: 0vh 0.5vw;
+    border-radius: 1vw;
+  }
+  .savebtn {
+    width: 8vw;
+    height: 6vh;
+    margin: 0vh 0.5vw;
+    border-radius: 1vw;
+  }
+  .maintablediv {
+    width: 100vw;
+    margin-top: 1vw;
+  }
+  .tableDatadiv {
+    width: 80vw;
+    margin-top: 2vh;
+  }
+  .tableDatadiv th,
+  .tableDatadiv td {
+    padding: 0.5vh 0.5vw;
+  }
+  .trowforheaad {
+    height: 5.5vh;
+    font-size: 0.95em;
+    font-weight: 800;
+  }
+  .datehd {
+    width: 7.5vw;
+  }
+  .texthead {
+    width: 50vw;
+  }
+  .tikettimehd {
+    width: 7.5vw;
+  }
+  .sendBTN {
+    margin-bottom: 6vh;
+    bottom: 0vh;
+    left: 0vw;
+    margin-left: 1vw;
+    width: 10vw;
+    height: 5vh;
+    z-index: 1000;
+    border-radius: 1vw;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .mains {
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .headersdiv {
+    width: 100vw;
+    height: 12vh;
+  }
+  .navcs {
+    width: 100vw;
+    height: 12vh;
+  }
+  .invoNumberDiv {
+    width: 20vw;
+    height: 6vh;
+    border-radius: 1vw;
+    left: 3vw;
+  }
+  .editOrSaveVtnDiv {
+    width: 20vw;
+    height: 6vh;
+  }
+  .editbtn {
+    width: 8vw;
+    height: 6vh;
+    margin: 0vh 0.5vw;
+    border-radius: 1vw;
+  }
+  .savebtn {
+    width: 8vw;
+    height: 6vh;
+    margin: 0vh 0.5vw;
+    border-radius: 1vw;
+  }
+  .maintablediv {
+    width: 100vw;
+    margin-top: 1vw;
+  }
+  .tableDatadiv {
+    width: 80vw;
+    margin-top: 2vh;
+  }
+  .tableDatadiv th,
+  .tableDatadiv td {
+    padding: 0.5vh 0.5vw;
+  }
+  .trowforheaad {
+    height: 5.5vh;
+    font-size: 0.95em;
+    font-weight: 800;
+  }
+  .datehd {
+    width: 7.5vw;
+  }
+  .texthead {
+    width: 50vw;
+  }
+  .tikettimehd {
+    width: 7.5vw;
+  }
+  .sendBTN {
+    margin-bottom: 6vh;
+    bottom: 0vh;
+    left: 0vw;
+    margin-left: 1vw;
+    width: 10vw;
+    height: 5vh;
+    z-index: 1000;
+    border-radius: 1vw;
+  }
 }
 @media (min-width: 1200px) and (max-width: 1919px) {
+  .mains {
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .headersdiv {
+    width: 100vw;
+    height: 12vh;
+  }
+  .navcs {
+    width: 100vw;
+    height: 12vh;
+  }
+  .invoNumberDiv {
+    width: 20vw;
+    height: 6vh;
+    border-radius: 1vw;
+    left: 3vw;
+  }
+  .editOrSaveVtnDiv {
+    width: 20vw;
+    height: 6vh;
+  }
+  .editbtn {
+    width: 8vw;
+    height: 6vh;
+    margin: 0vh 0.5vw;
+    border-radius: 1vw;
+  }
+  .savebtn {
+    width: 8vw;
+    height: 6vh;
+    margin: 0vh 0.5vw;
+    border-radius: 1vw;
+  }
+  .maintablediv {
+    width: 100vw;
+    margin-top: 1vw;
+  }
+  .tableDatadiv {
+    width: 80vw;
+    margin-top: 2vh;
+  }
+  .tableDatadiv th,
+  .tableDatadiv td {
+    padding: 0.5vh 0.5vw;
+  }
+  .trowforheaad {
+    height: 5.5vh;
+    font-size: 0.95em;
+    font-weight: 800;
+  }
+  .datehd {
+    width: 7.5vw;
+  }
+  .texthead {
+    width: 50vw;
+  }
+  .tikettimehd {
+    width: 7.5vw;
+  }
+  .sendBTN {
+    margin-bottom: 6vh;
+    bottom: 0vh;
+    left: 0vw;
+    margin-left: 1vw;
+    width: 10vw;
+    height: 5vh;
+    z-index: 1000;
+    border-radius: 1vw;
+  }
 }
 @media (min-width: 1920px) {
+  .mains {
+    width: 100vw;
+    min-height: 100vh;
+  }
+  .headersdiv {
+    width: 100vw;
+    height: 12vh;
+  }
+  .navcs {
+    width: 100vw;
+    height: 12vh;
+  }
+  .invoNumberDiv {
+    width: 20vw;
+    height: 6vh;
+    border-radius: 1vw;
+    left: 3vw;
+  }
+  .editOrSaveVtnDiv {
+    width: 20vw;
+    height: 6vh;
+  }
+  .editbtn {
+    width: 8vw;
+    height: 6vh;
+    margin: 0vh 0.5vw;
+    border-radius: 1vw;
+  }
+  .savebtn {
+    width: 8vw;
+    height: 6vh;
+    margin: 0vh 0.5vw;
+    border-radius: 1vw;
+  }
+  .maintablediv {
+    width: 100vw;
+    margin-top: 1vw;
+  }
+  .tableDatadiv {
+    width: 80vw;
+    margin-top: 2vh;
+  }
+  .tableDatadiv th,
+  .tableDatadiv td {
+    padding: 0.5vh 0.5vw;
+  }
+  .trowforheaad {
+    height: 5.5vh;
+    font-size: 0.95em;
+    font-weight: 800;
+  }
+  .datehd {
+    width: 7.5vw;
+  }
+  .texthead {
+    width: 50vw;
+  }
+  .tikettimehd {
+    width: 7.5vw;
+  }
+  .sendBTN {
+    margin-bottom: 6vh;
+    bottom: 0vh;
+    left: 0vw;
+    margin-left: 1vw;
+    width: 10vw;
+    height: 5vh;
+    z-index: 1000;
+    border-radius: 1vw;
+  }
 }
 </style>
+<!-- <style lang="scss" scoped>
+
+.mains{
+  background:darkcyan;
+  width:100%;
+  min-height:100vh;
+}
+
+/* ---------- HEADER ---------- */
+
+.headersdiv{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  height:90px;
+}
+
+.navcs{
+  width:95%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.invoNumberDiv{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  width:60px;
+  height:60px;
+
+  border-radius:50%;
+
+  background:#414242;
+  color:#fff;
+
+  font-size:1.2rem;
+  font-weight:bold;
+}
+
+/* ---------- BUTTONS ---------- */
+
+.editOrSaveVtnDiv{
+  display:flex;
+  gap:10px;
+}
+
+.editbtn,
+.savebtn{
+  padding:8px 16px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+
+  background:#414242;
+  color:#fff;
+}
+
+/* ---------- TABLE ---------- */
+
+.maintablediv{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  direction:rtl;
+  width:100%;
+}
+
+.tableDatadiv{
+
+  width:95%;
+  max-width:1300px;
+
+  border-collapse:collapse;
+  table-layout:fixed;
+
+  background:white;
+}
+
+/* رأس الجدول */
+
+.theadDiv{
+  background:#414242;
+  color:white;
+}
+
+.trowforheaad{
+  font-weight:bold;
+}
+
+/* الخلايا */
+
+.tableDatadiv th,
+.tableDatadiv td{
+
+  padding:10px;
+  text-align:center;
+
+  border:1px solid #ddd;
+
+  font-size:0.95rem;
+
+  word-break:break-word;
+}
+
+/* توزيع الأعمدة */
+
+.rownumhd{
+  width:7%;
+}
+
+.datehd{
+  width:13%;
+}
+
+.texthead{
+  width:50%;
+  text-align:right;
+}
+
+.tikettimehd{
+  width:15%;
+}
+
+.tableDatadiv th:last-child{
+  width:15%;
+}
+
+/* ---------- RADIO BUTTONS ---------- */
+
+.radioContainer{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+
+  flex-wrap:wrap;
+}
+
+.radioContainer label{
+  display:flex;
+  align-items:center;
+  gap:4px;
+}
+
+/* تقليل حجم الراديو قليلاً */
+
+input[type="radio"]{
+  transform:scale(0.9);
+}
+
+/* ---------- SEND BUTTON ---------- */
+
+.sendBTN{
+
+  position:fixed;
+
+  bottom:20px;
+  left:20px;
+
+  padding:10px 22px;
+
+  background:#414242;
+  color:#fff;
+
+  border:none;
+  border-radius:8px;
+
+  cursor:pointer;
+
+  z-index:1000;
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width:992px){
+
+.tableDatadiv{
+  width:97%;
+}
+
+.texthead{
+  width:48%;
+}
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:768px){
+
+.headersdiv{
+  height:70px;
+}
+
+.invoNumberDiv{
+  width:50px;
+  height:50px;
+  font-size:1rem;
+}
+
+/* توزيع الأعمدة للموبايل */
+
+.rownumhd{
+  width:8%;
+}
+
+.datehd{
+  width:12%;
+}
+
+.texthead{
+  width:55%;
+}
+
+.tikettimehd{
+  width:12%;
+}
+
+.tableDatadiv th:last-child{
+  width:13%;
+}
+
+/* النصوص */
+
+.tableDatadiv th,
+.tableDatadiv td{
+  font-size:0.8rem;
+  padding:6px;
+}
+
+/* جعل الراديو عمودي */
+
+.radioContainer{
+  flex-direction:column;
+}
+
+/* زر الارسال */
+
+.sendBTN{
+  bottom:15px;
+  left:15px;
+  padding:8px 16px;
+  font-size:0.8rem;
+}
+
+}
+
+</style> -->

@@ -1,23 +1,14 @@
 <script setup lang="ts">
-// import ToogleToShowBurger from "../../components/ToogleToShowBurger.vue";
-// import ToogleToTop from "../../components/ToogleToTop.vue";
-// import { ref, onMounted } from "vue";
-// import { useUserStore } from "../../stores/userStore";
-// import { useRouter } from "vue-router";
 import { useRoute } from "vue-router";
-// import axios from "axios";
 //--------------------------
 interface Row {
   [key: string]: any;
 }
-
 const userStore = useUserStore();
-// const router = useRouter();
 const route = useRoute();
 const datas = ref<Row[]>([]);
 const isReadOnly = ref(true);
 //--------------------------
-
 const fetchingUpdatedData = async () => {
   const response = await $fetch("/Endpoint/getrowdata", {
     method: "POST",
@@ -26,10 +17,8 @@ const fetchingUpdatedData = async () => {
       idtecketrfr: route.params.id,
     },
   });
-
   return (datas.value = response);
 };
-
 const editAble = async () => {
   isReadOnly.value = !isReadOnly.value;
   if (isReadOnly.value) {
@@ -44,7 +33,6 @@ const editAble = async () => {
         isDone: Boolean(row.doneornot),
       };
     });
-
     const response = await $fetch("/Endpoint/tecketrow", {
       method: "PUT",
       credentials: "include",
@@ -55,7 +43,6 @@ const editAble = async () => {
     await fetchingUpdatedData();
   }
 };
-
 const deleteTicket = async () => {
   const response = await $fetch("/Endpoint/tecketrow", {
     method: "DELETE",
@@ -69,7 +56,6 @@ const deleteTicket = async () => {
     console.error(data.message);
   }
 };
-
 //--------------------------
 onMounted(async () => {
   const response = await $fetch("/Endpoint/getrowdata", {
@@ -79,7 +65,6 @@ onMounted(async () => {
       idtecketrfr: route.params.id,
     },
   });
-
   datas.value = response;
   //-----------------------
 });
@@ -185,253 +170,527 @@ onMounted(async () => {
 </template>
 
 <style lang="scss" scoped>
+// .main {
+//   background: darkcyan;
+// }
+// .headersdiv {
+//   display: flex;
+//   position: relative;
+//   justify-content: center;
+//   align-items: center;
+//   margin: auto;
+// }
+// .navcs {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin: auto;
+// }
+// .invoNumberDiv {
+//   display: flex;
+//   position: absolute;
+//   justify-content: center;
+//   align-items: center;
+//   background: #414242;
+//   color: #fff;
+// }
+// // .invonumberdata {
+// // }
+// .editOrSaveVtnDiv {
+//   display: flex;
+//   position: absolute;
+//   justify-content: center;
+//   align-items: center;
+// }
+// .editbtn {
+//   display: flex;
+//   position: relative;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: transparent;
+//   outline: none;
+//   border: none;
+//   cursor: pointer;
+//   background: #414242;
+//   border-radius: 1vw;
+//   color: #fff;
+// }
+// .savebtn {
+//   display: flex;
+//   position: relative;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: transparent;
+//   outline: none;
+//   border: none;
+//   cursor: pointer;
+//   background: #414242;
+//   color: #fff;
+// }
+// .maintablediv {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   margin: auto;
+//   direction: rtl;
+// }
+// .tableDatadiv {
+//   border-collapse: collapse;
+//   table-layout: fixed;
+// }
+// .theadDiv {
+//   background-color: #414242;
+//   color: white;
+// }
+// .tableDatadiv th,
+// .tableDatadiv td {
+//   text-align: center;
+// }
+// .trowforheaad {
+//   border-collapse: collapse;
+//   table-layout: fixed;
+//   text-align: center;
+// }
+// // .rownumhd {
+// // }
+// // .datehd {
+// //   width: 7.5vw;
+// // }
+// .texthead {
+//   margin: auto;
+//   justify-content: center;
+//   align-items: center;
+// }
+// .tikettimehd {
+//   position: relative;
+//   justify-content: center;
+//   align-items: center;
+//   margin: auto;
+// }
+// .tbodycs {
+//   border-collapse: collapse;
+//   table-layout: fixed;
+//   display: table-row;
+//   margin: auto;
+// }
+// .tbodycs:hover {
+//   background: #414242;
+// }
+// .rownumtd {
+//   display: table-cell;
+//   text-align: center;
+//   border-collapse: collapse;
+// }
+// .datetd * {
+//   display: table-cell;
+//   text-align: center;
+//   border-collapse: collapse;
+// }
+// .dateput {
+//   border: none;
+//   background-color: transparent;
+//   font-weight: bold;
+//   outline: none;
+//   text-align: center;
+// }
+// .inputediv {
+//   position: relative;
+//   margin: auto;
+//   justify-content: center;
+//   align-items: center;
+// }
+// .inputtaske {
+//   display: flex;
+//   position: relative;
+//   margin: auto;
+//   background-color: transparent;
+//   border: none;
+//   outline: none;
+//   overflow: hidden;
+//   resize: none;
+//   justify-content: center;
+//   align-items: center;
+// }
+// .radios {
+//   display: table-cell;
+//   text-align: center;
+//   border-collapse: collapse;
+// }
+// .bigdiv {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+// .bigdiv div {
+//   display: flex;
+//   flex-direction: column;
+// }
+// .donediv {
+//   display: table-cell;
+//   text-align: center;
+//   border-collapse: collapse;
+// }
+// .donept {
+//   display: table-cell;
+//   text-align: center;
+//   border-collapse: collapse;
+// }
+// @media (max-width: 480px) {
+// }
+
+// @media (min-width: 481px) and (max-width: 767px) {
+// }
+// @media (min-width: 992px) and (max-width: 1199px) {
+// }
+// @media (min-width: 768px) and (max-width: 991px) {
+// }
+// @media (min-width: 1200px) and (max-width: 1919px) {
+//   .main {
+//     width: 100vw;
+//     min-height: 100vh;
+//   }
+//   .headersdiv {
+//     width: 100vw;
+//     height: 12vh;
+//   }
+//   .navcs {
+//     width: 100vw;
+//     height: 12vh;
+//   }
+//   .invoNumberDiv {
+//     width: 20vw;
+//     height: 6vh;
+//     border-radius: 1vw;
+//     left: 3vw;
+//   }
+//   // .invonumberdata {
+//   // }
+//   .editOrSaveVtnDiv {
+//     width: 20vw;
+//     height: 6vh;
+//   }
+//   .editbtn {
+//     width: 8vw;
+//     height: 6vh;
+//     margin: 0vh 0.5vw;
+//     border-radius: 1vw;
+//   }
+//   .savebtn {
+//     width: 8vw;
+//     height: 6vh;
+//     margin: 0vh 0.5vw;
+//     border-radius: 1vw;
+//   }
+//   .maintablediv {
+//     width: 100vw;
+//     margin-top: 1vw;
+//   }
+//   .tableDatadiv {
+//     width: 80vw;
+//     margin-top: 2vh;
+//   }
+//   .tableDatadiv th,
+//   .tableDatadiv td {
+//     padding: 0.5vh 0.5vw;
+//   }
+//   .trowforheaad {
+//     height: 5.5vh;
+//     font-size: 0.95em;
+//     font-weight: 800;
+//   }
+//   // .rownumhd {
+//   // }
+//   .datehd {
+//     width: 7.5vw;
+//   }
+//   .texthead {
+//     width: 50vw;
+//   }
+//   .tikettimehd {
+//     width: 7.5vw;
+//   }
+//   .tbodycs:hover {
+//     border-radius: 1vw;
+//   }
+//   .datetd * {
+//     width: 7.5vw;
+//   }
+//   .inputediv {
+//     width: 50vw;
+//     height: 6vh;
+//   }
+//   .inputtaske {
+//     width: 50vw;
+//     height: 6vh;
+//     font-size: 1vw;
+//     font-weight: 900;
+//     padding: 1vw;
+//   }
+//   .radios {
+//     width: 7.5vw;
+//   }
+//   .bigdiv {
+//     width: 7.5vw;
+//   }
+//   .bigdiv div {
+//     margin: 0vh 1vw;
+//   }
+//   tr,
+//   td {
+//     width: 7.5vw;
+//   }
+// }
+// @media (min-width: 1920px) {
+// }
+
+//--------------------------------------------------
 .main {
   width: 100vw;
   min-height: 100vh;
   background: darkcyan;
-}
-.headersdiv {
   display: flex;
-  position: relative;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+}
+
+/* ================= HEADER ================= */
+
+.headersdiv {
   width: 100vw;
   height: 12vh;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navcs {
+  width: 95vw;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 12vh;
-  margin: auto;
+  position: relative;
 }
 
+/* invoice */
+
 .invoNumberDiv {
-  display: flex;
   position: absolute;
+  left: 1vw;
+  width: 18vw;
+  height: 6vh;
+
+  display: flex;
   justify-content: center;
   align-items: center;
-  width: 20vw;
-  height: 6vh;
+
   background: #414242;
-  border-radius: 1vw;
-  left: 3vw;
   color: #fff;
+
+  border-radius: 0.8vw;
+  font-size: 1.1vw;
+  font-weight: bold;
 }
-.invonumberdata {
-}
+
+/* buttons */
 
 .editOrSaveVtnDiv {
   display: flex;
-  position: absolute;
   justify-content: center;
   align-items: center;
-  width: 20vw;
-  height: 6vh;
+  gap: 1vw;
 }
 
-.editbtn {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  width: 8vw;
-  height: 6vh;
-  background-color: transparent;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  margin: 0vh 0.5vw;
-  background: #414242;
-  border-radius: 1vw;
-  color: #fff;
-}
-
+.editbtn,
 .savebtn {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
   width: 8vw;
   height: 6vh;
-  background-color: transparent;
-  outline: none;
+
   border: none;
+  outline: none;
   cursor: pointer;
-  margin: 0vh 0.5vw;
+
+  border-radius: 0.8vw;
+
   background: #414242;
-  border-radius: 1vw;
   color: #fff;
+
+  font-size: 1vw;
+  font-weight: bold;
+
+  transition: 0.2s;
 }
+
+.editbtn:hover,
+.savebtn:hover {
+  background: #2b2c2c;
+}
+
+/* ================= TABLE ================= */
 
 .maintablediv {
-  display: flex;
-  flex-direction: column;
   width: 100vw;
-  align-items: center;
-  margin: auto;
-  margin-top: 1vw;
+  display: flex;
+  justify-content: center;
   direction: rtl;
-}
-
-.tableDatadiv {
-  border-collapse: collapse;
-  table-layout: fixed;
-  width: 80vw;
   margin-top: 2vh;
 }
 
-.theadDiv {
-  background-color: #414242;
-  color: white;
+.tableDatadiv {
+  width: 85vw;
+  border-collapse: collapse;
+  table-layout: fixed;
+  // background: #ffffff;
+  border-radius: 0.8vw;
+  overflow: hidden;
 }
-.tableDatadiv th,
-.tableDatadiv td {
-  text-align: center;
-  padding: 0.5vh 0.5vw;
+
+/* header */
+
+.theadDiv {
+  background: #414242;
+  color: #fff;
 }
 
 .trowforheaad {
-  border-collapse: collapse;
-  table-layout: fixed;
-  height: 5.5vh;
-  font-size: 0.95em;
+  height: 6vh;
+  font-size: 1vw;
   font-weight: 800;
+}
+
+/* cells */
+
+.tableDatadiv th,
+.tableDatadiv td {
+  padding: 0.8vh 0.5vw;
   text-align: center;
 }
-.rownumhd {
-}
-.datehd {
-  width: 7.5vw;
-}
-.texthead {
-  /* background-color: aliceblue; */
-  width: 50vw;
-  margin: auto;
-  justify-content: center;
-  align-items: center;
-}
-.tikettimehd {
-  /* background: indigo; */
-  /* display: flex; */
-  position: relative;
-  width: 7.5vw;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  /* background: #000; */
-}
 
-.tbodycs {
-  border-collapse: collapse;
-  table-layout: fixed;
-  display: table-row;
-  margin: auto;
+/* hover */
 
-  // margin-top: 1.5vh;
-}
 .tbodycs:hover {
-  background: #414242;
-  border-radius: 1vw;
+  background: #f2f2f2;
 }
 
+/* column widths */
+
+.rownumhd,
 .rownumtd {
-  display: table-cell;
-  text-align: center;
-  border-collapse: collapse;
+  width: 5vw;
 }
+
+.datehd,
 .datetd * {
-  width: 7.5vw;
-  display: table-cell;
-  text-align: center;
-  border-collapse: collapse;
+  width: 8vw;
 }
+
+.texthead,
+.inputediv {
+  width: 50vw;
+}
+
+.tikettimehd,
+.radios {
+  width: 10vw;
+}
+
+.donediv {
+  width: 5vw;
+}
+
+/* ================= INPUTS ================= */
 
 .dateput {
+  width: 100%;
   border: none;
-  background-color: transparent;
+  background: transparent;
+  text-align: center;
   font-weight: bold;
   outline: none;
-  text-align: center;
-}
-.inputediv {
-  /* background: aqua; */
-  width: 50vw;
-  position: relative;
-  margin: auto;
-  height: 6vh;
-  justify-content: center;
-  align-items: center;
 }
 
 .inputtaske {
-  display: flex;
-  position: relative;
-  margin: auto;
-  width: 50vw;
+  width: 100%;
   height: 6vh;
-  background-color: transparent;
+
   border: none;
   outline: none;
-  overflow: hidden;
   resize: none;
+
+  background: transparent;
+
   font-size: 1vw;
-  font-weight: 900;
-  justify-content: center;
-  align-items: center;
-  padding: 1vw;
+  font-weight: 600;
+
+  padding: 0.5vw;
+  line-height: 1.4;
 }
 
-.radios {
-  width: 7.5vw;
-  display: table-cell;
-  text-align: center;
-  border-collapse: collapse;
-}
+/* radios */
+
 .bigdiv {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: #000; */
-  /* max-width: 7.5vw; */
-  width: 7.5vw;
+  gap: 1vw;
 }
 
 .bigdiv div {
   display: flex;
   flex-direction: column;
-  margin: 0vh 1vw;
+  align-items: center;
 }
 
-tr,
-td {
-  width: 7.5vw;
-}
-.donediv {
-  display: table-cell;
-  text-align: center;
-  border-collapse: collapse;
-}
-.donept {
-  display: table-cell;
-  text-align: center;
-  border-collapse: collapse;
+/* ================= MOBILE ================= */
+
+@media (max-width: 767px) {
+  .invoNumberDiv {
+    width: fit-content;
+    font-size: 3vw;
+    padding: 0vh 2.5vw;
+  }
+
+  .editbtn,
+  .savebtn {
+    width: 22vw;
+    height: 6vh;
+    font-size: 3vw;
+  }
+
+  .tableDatadiv {
+    width: 96vw;
+  }
+
+  .trowforheaad {
+    font-size: 2.8vw;
+  }
+
+  .inputtaske {
+    font-size: 3vw;
+  }
 }
 
-@media (max-width: 480px) {
-}
+/* ================= TABLET ================= */
 
-@media (min-width: 481px) and (max-width: 767px) {
-}
-@media (min-width: 992px) and (max-width: 1199px) {
-}
 @media (min-width: 768px) and (max-width: 991px) {
+  .tableDatadiv {
+    width: 92vw;
+  }
+
+  .inputtaske {
+    font-size: 1.8vw;
+  }
 }
-@media (min-width: 1200px) and (max-width: 1919px) {
-}
-@media (min-width: 1920px) {
+
+/* ================= LARGE SCREENS ================= */
+
+@media (min-width: 1600px) {
+  .tableDatadiv {
+    width: 70vw;
+  }
+
+  .inputtaske {
+    font-size: 0.9vw;
+  }
 }
 </style>

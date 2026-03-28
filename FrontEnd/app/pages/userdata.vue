@@ -67,45 +67,29 @@ definePageMeta({
   background: darkcyan;
   overflow-x: hidden;
 }
-
 .tooglenavlistdv {
   display: flex;
   position: absolute;
   background: #5078b2;
-  width: 3.5vw;
-  height: 7vh;
-  right: 3vw;
   justify-content: center;
   align-items: center;
-  border-radius: 1vw;
-  z-index: 1000;
 }
-
 .tooglenavlistbtn {
   background: none;
   outline: none;
   border: none;
-  width: 3vw;
-  height: 10vh;
   cursor: pointer;
   color: white;
-  font-size: 0.85vw;
-  font-weight: 900;
 }
-
 .userControoler {
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 80vw;
-  height: 50vh;
   background-color: rgba(245, 222, 179, 0.432);
   margin: auto;
-  margin-top: 10vh;
 }
-
 .photohead {
   display: flex;
   position: absolute;
@@ -113,124 +97,74 @@ definePageMeta({
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 255, 0.37);
-  width: 80vw;
-  height: 7vh;
-  margin-top: 0vh;
-  top: 0vh;
-  border-radius: 0vw 0vw 4vw 0vw;
 }
-
 .lableForUserName {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   margin: auto;
-  /* background-color: brown; */
-  width: 40vw;
-  height: 6vh;
-  margin-right: 1vw;
-  margin-top: 6vw;
   color: white;
 }
-
 label input {
   display: flex;
   margin: auto;
-  margin-right: 2vw;
-  width: 25vw;
   background: transparent;
   outline: none;
   justify-content: center;
   align-items: center;
   border: none;
 }
-
 .lableForUserPasswd {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   margin: auto;
-  /* background-color: brown; */
-  width: 40vw;
-  height: 6vh;
-  margin-right: 1vw;
-  margin-top: 1vh;
   color: white;
 }
-
 .lableForUserEmail {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   margin: auto;
-  /* background-color: brown; */
-  width: 40vw;
-  height: 6vh;
-  margin-right: 1vw;
-  margin-top: 1vh;
   color: white;
 }
-
 .lableForUserId {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   margin: auto;
-  /* background-color: brown; */
-  width: 40vw;
-  height: 6vh;
-  margin-right: 1vw;
-  margin-top: 1vh;
   color: white;
 }
-
 .resetDataDiv {
   display: flex;
   position: absolute;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 35vw;
-  height: 40vh;
-  /* background-color: rgba(245, 222, 179, 0.432); */
   margin: auto;
-  margin-top: 10vh;
-  margin-left: 0vw;
-  left: 0vw;
 }
-
 .resetDataDiv span {
   margin: auto;
   color: darkblue;
-  font-size: 1.094em;
   cursor: pointer;
 }
-
 .stataicUserData {
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 80vw;
-  height: 45vh;
   background-color: rgba(245, 222, 179, 0.432);
   margin: auto;
-  margin-top: 10vh;
-  margin-bottom: 5vh;
 }
-
 .myChart {
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  top: 4vh;
-  width: 15vw;
-  height: 8vh;
   margin: auto;
 }
 
@@ -238,25 +172,493 @@ label input {
   background-color: #5078b2;
   display: flex;
   position: fixed;
-  bottom: 5vh;
-  width: 3.5vw;
-  height: 7vh;
-  right: 3vw;
   cursor: pointer;
-  border-radius: 1vw;
 }
-
 @media (max-width: 480px) {
+  .tooglenavlistdv {
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+    z-index: 1000;
+  }
+  .tooglenavlistbtn {
+    width: 3vw;
+    height: 10vh;
+    font-size: 0.85vw;
+    font-weight: 900;
+  }
+  .userControoler {
+    width: 80vw;
+    height: 50vh;
+    margin-top: 10vh;
+  }
+  .photohead {
+    width: 80vw;
+    height: 7vh;
+    margin-top: 0vh;
+    top: 0vh;
+    border-radius: 0vw 0vw 4vw 0vw;
+  }
+  .lableForUserName {
+    width: 75vw;
+    height: 6vh;
+    margin-top: 16vw;
+  }
+  label input {
+    margin-right: 2vw;
+    width: 25vw;
+  }
+  .lableForUserPasswd {
+    width: 75vw;
+    height: 6vh;
+    margin: 1vh;
+  }
+  .lableForUserEmail {
+    width: 75vw;
+    height: 6vh;
+    margin: 1vh;
+  }
+  .lableForUserId {
+    width: 75vw;
+    height: 6vh;
+    margin: 1vh;
+  }
+  .resetDataDiv {
+    position: relative;
+    width: 75vw;
+    height: 25vh;
+  }
+  .resetDataDiv span {
+    font-size: 1.094em;
+  }
+  .stataicUserData {
+    width: 80vw;
+    height: 45vh;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+  .myChart {
+    top: 4vh;
+    width: 15vw;
+    height: 8vh;
+  }
+  .toogleToTopDiv {
+    bottom: 5vh;
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 767px) {
+  .tooglenavlistdv {
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+    z-index: 1000;
+  }
+  .tooglenavlistbtn {
+    width: 3vw;
+    height: 10vh;
+    font-size: 0.85vw;
+    font-weight: 900;
+  }
+  .userControoler {
+    width: 80vw;
+    height: 50vh;
+    margin-top: 10vh;
+  }
+  .photohead {
+    width: 80vw;
+    height: 7vh;
+    margin-top: 0vh;
+    top: 0vh;
+    border-radius: 0vw 0vw 4vw 0vw;
+  }
+  .lableForUserName {
+    width: 75vw;
+    height: 6vh;
+    margin-top: 16vw;
+  }
+  label input {
+    margin-right: 2vw;
+    width: 25vw;
+  }
+  .lableForUserPasswd {
+    width: 75vw;
+    height: 6vh;
+    margin: 1vh;
+  }
+  .lableForUserEmail {
+    width: 75vw;
+    height: 6vh;
+    margin: 1vh;
+  }
+  .lableForUserId {
+    width: 75vw;
+    height: 6vh;
+    margin: 1vh;
+  }
+  .resetDataDiv {
+    position: relative;
+    width: 75vw;
+    height: 25vh;
+  }
+  .resetDataDiv span {
+    font-size: 1.094em;
+  }
+  .stataicUserData {
+    width: 80vw;
+    height: 45vh;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+  .myChart {
+    top: 4vh;
+    width: 15vw;
+    height: 8vh;
+  }
+  .toogleToTopDiv {
+    bottom: 5vh;
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+  }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
+  .tooglenavlistdv {
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+    z-index: 1000;
+  }
+  .tooglenavlistbtn {
+    width: 3vw;
+    height: 10vh;
+    font-size: 0.85vw;
+    font-weight: 900;
+  }
+  .userControoler {
+    width: 80vw;
+    height: 50vh;
+    margin-top: 10vh;
+  }
+  .photohead {
+    width: 80vw;
+    height: 7vh;
+    margin-top: 0vh;
+    top: 0vh;
+    border-radius: 0vw 0vw 4vw 0vw;
+  }
+  .lableForUserName {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 6vw;
+  }
+  label input {
+    margin-right: 2vw;
+    width: 25vw;
+  }
+  .lableForUserPasswd {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 1vh;
+  }
+  .lableForUserEmail {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 1vh;
+  }
+  .lableForUserId {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 1vh;
+  }
+  .resetDataDiv {
+    width: 35vw;
+    height: 40vh;
+    margin-top: 10vh;
+    margin-left: 0vw;
+    left: 0vw;
+  }
+  .resetDataDiv span {
+    font-size: 1.094em;
+  }
+  .stataicUserData {
+    width: 80vw;
+    height: 45vh;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+  .myChart {
+    top: 4vh;
+    width: 15vw;
+    height: 8vh;
+  }
+  .toogleToTopDiv {
+    bottom: 5vh;
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
+  .tooglenavlistdv {
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+    z-index: 1000;
+  }
+  .tooglenavlistbtn {
+    width: 3vw;
+    height: 10vh;
+    font-size: 0.85vw;
+    font-weight: 900;
+  }
+  .userControoler {
+    width: 80vw;
+    height: 50vh;
+    margin-top: 10vh;
+  }
+  .photohead {
+    width: 80vw;
+    height: 7vh;
+    margin-top: 0vh;
+    top: 0vh;
+    border-radius: 0vw 0vw 4vw 0vw;
+  }
+  .lableForUserName {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 6vw;
+  }
+  label input {
+    margin-right: 2vw;
+    width: 25vw;
+  }
+  .lableForUserPasswd {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 1vh;
+  }
+  .lableForUserEmail {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 1vh;
+  }
+  .lableForUserId {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 1vh;
+  }
+  .resetDataDiv {
+    width: 35vw;
+    height: 40vh;
+    margin-top: 10vh;
+    margin-left: 0vw;
+    left: 0vw;
+  }
+  .resetDataDiv span {
+    font-size: 1.094em;
+  }
+  .stataicUserData {
+    width: 80vw;
+    height: 45vh;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+  .myChart {
+    top: 4vh;
+    width: 15vw;
+    height: 8vh;
+  }
+  .toogleToTopDiv {
+    bottom: 5vh;
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+  }
 }
 @media (min-width: 1200px) and (max-width: 1919px) {
+  .tooglenavlistdv {
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+    z-index: 1000;
+  }
+  .tooglenavlistbtn {
+    width: 3vw;
+    height: 10vh;
+    font-size: 0.85vw;
+    font-weight: 900;
+  }
+  .userControoler {
+    width: 80vw;
+    height: 50vh;
+    margin-top: 10vh;
+  }
+  .photohead {
+    width: 80vw;
+    height: 7vh;
+    margin-top: 0vh;
+    top: 0vh;
+    border-radius: 0vw 0vw 4vw 0vw;
+  }
+  .lableForUserName {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 6vw;
+  }
+  label input {
+    margin-right: 2vw;
+    width: 25vw;
+  }
+  .lableForUserPasswd {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 1vh;
+  }
+  .lableForUserEmail {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 1vh;
+  }
+  .lableForUserId {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 1vh;
+  }
+  .resetDataDiv {
+    width: 35vw;
+    height: 40vh;
+    margin-top: 10vh;
+    margin-left: 0vw;
+    left: 0vw;
+  }
+  .resetDataDiv span {
+    font-size: 1.094em;
+  }
+  .stataicUserData {
+    width: 80vw;
+    height: 45vh;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+  .myChart {
+    top: 4vh;
+    width: 15vw;
+    height: 8vh;
+  }
+  .toogleToTopDiv {
+    bottom: 5vh;
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+  }
 }
 @media (min-width: 1920px) {
+  .tooglenavlistdv {
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+    z-index: 1000;
+  }
+  .tooglenavlistbtn {
+    width: 3vw;
+    height: 10vh;
+    font-size: 0.85vw;
+    font-weight: 900;
+  }
+  .userControoler {
+    width: 80vw;
+    height: 50vh;
+    margin-top: 10vh;
+  }
+  .photohead {
+    width: 80vw;
+    height: 7vh;
+    margin-top: 0vh;
+    top: 0vh;
+    border-radius: 0vw 0vw 4vw 0vw;
+  }
+  .lableForUserName {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 6vw;
+  }
+  label input {
+    margin-right: 2vw;
+    width: 25vw;
+  }
+  .lableForUserPasswd {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 1vh;
+  }
+  .lableForUserEmail {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 1vh;
+  }
+  .lableForUserId {
+    width: 40vw;
+    height: 6vh;
+    margin-right: 1vw;
+    margin-top: 1vh;
+  }
+  .resetDataDiv {
+    width: 35vw;
+    height: 40vh;
+    margin-top: 10vh;
+    margin-left: 0vw;
+    left: 0vw;
+  }
+  .resetDataDiv span {
+    font-size: 1.094em;
+  }
+  .stataicUserData {
+    width: 80vw;
+    height: 45vh;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+  }
+  .myChart {
+    top: 4vh;
+    width: 15vw;
+    height: 8vh;
+  }
+  .toogleToTopDiv {
+    bottom: 5vh;
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+  }
 }
 </style>

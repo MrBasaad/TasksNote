@@ -150,7 +150,7 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 0.6rem;
+  font-size: 0.9rem;
   font-weight: 900;
   text-align: center;
 }
