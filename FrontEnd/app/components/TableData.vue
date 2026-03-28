@@ -150,7 +150,7 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 1.1vw;
+  font-size: 0.6rem;
   font-weight: 900;
   text-align: center;
 }
@@ -193,5 +193,19 @@ onMounted(() => {
 tr,
 td {
   width: 13vw;
+}
+
+@media (max-width: 480px) {
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+@media (min-width: 768px) and (max-width: 991px) {
+}
+@media (min-width: 1200px) and (max-width: 1919px) {
+}
+@media (min-width: 1920px) {
 }
 </style>

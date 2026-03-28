@@ -3,20 +3,20 @@
 // const toogleToTopDiv = ref<HTMLElement | null>(null)
 onMounted(() => {
   const scrollFucn = () => {
-    const toogleToTopDiv = document.getElementById('toogleToTopDiv')
-    if (!toogleToTopDiv) return
+    const toogleToTopDiv = document.getElementById("toogleToTopDiv");
+    if (!toogleToTopDiv) return;
 
     if (window.scrollY <= 10) {
-      toogleToTopDiv.style.display = 'none'
+      toogleToTopDiv.style.display = "none";
     } else {
-      toogleToTopDiv.style.display = 'flex'
+      toogleToTopDiv.style.display = "flex";
     }
-  }
+  };
 
-  window.addEventListener('scroll', scrollFucn)
-  scrollFucn()
-})
-const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+  window.addEventListener("scroll", scrollFucn);
+  scrollFucn();
+});
+const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 </script>
 <template>
   <div class="toogleToTopDiv" id="toogleToTopDiv" @click="scrollToTop">
@@ -30,10 +30,50 @@ const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
   display: flex;
   position: fixed;
   bottom: 5vh;
-  width: 3.5vw;
-  height: 7vh;
   right: 3vw;
   cursor: pointer;
-  border-radius: 1vw;
+}
+@media (max-width: 480px) {
+  .toogleToTopDiv {
+    width: 7vw;
+    height: 7vh;
+    border-radius: 2vw;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .toogleToTopDiv {
+    width: 7vw;
+    height: 7vh;
+    border-radius: 2vw;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .toogleToTopDiv {
+    width: 3.5vw;
+    height: 7vh;
+    border-radius: 1vw;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .toogleToTopDiv {
+    width: 3.5vw;
+    height: 7vh;
+    border-radius: 1vw;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .toogleToTopDiv {
+    width: 3.5vw;
+    height: 7vh;
+    border-radius: 1vw;
+  }
+}
+@media (min-width: 1920px) {
+  .toogleToTopDiv {
+    width: 3.5vw;
+    height: 7vh;
+    border-radius: 1vw;
+  }
 }
 </style>

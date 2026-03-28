@@ -1,12 +1,14 @@
 <script setup lang="ts">
 // import NavBar from './NavBar.vue'
 // import { ref } from 'vue'
-const isToglle = ref<boolean>(false)
-const btnData = ref<string>('=')
+const isToglle = ref<boolean>(false);
+const btnData = ref<string>("=");
 const toggleNav = () => {
-  isToglle.value = !isToglle.value
-  return btnData.value.match('=') ? (btnData.value = 'X') : (btnData.value = '=')
-}
+  isToglle.value = !isToglle.value;
+  return btnData.value.match("=")
+    ? (btnData.value = "X")
+    : (btnData.value = "=");
+};
 </script>
 <template>
   <div>
@@ -23,47 +25,201 @@ div {
   position: fixed;
   justify-content: center;
   align-items: center;
-  width: 10vw;
-  height: 12vh;
   margin: auto;
-  margin-right: 0;
-  right: 0;
-  z-index: 2000;
   .navcs {
     display: flex;
     position: fixed;
     justify-content: center;
     align-items: center;
-    width: 10vw;
-    height: 12vh;
     margin: auto;
-    margin-right: 0;
-    right: 0;
-    z-index: 2000;
   }
 }
 .tooglenavlistdv {
   display: flex;
   position: absolute;
   background: #5078b2;
-  width: 3.5vw;
-  height: 7vh;
-  right: 3vw;
   justify-content: center;
   align-items: center;
-  border-radius: 1vw;
-  z-index: 1000;
 }
-
 .tooglenavlistbtn {
   background: none;
   outline: none;
   border: none;
-  width: 3vw;
-  height: 10vh;
   cursor: pointer;
   color: white;
-  font-size: 0.85vw;
-  font-weight: 900;
+}
+@media (max-width: 480px) {
+  div {
+    width: 10vw;
+    height: 12vh;
+    margin-right: 0;
+    right: 0;
+    z-index: 2000;
+    .navcs {
+      width: 10vw;
+      height: 12vh;
+      margin-right: 0;
+      right: 0;
+      z-index: 2000;
+    }
+  }
+  .tooglenavlistdv {
+    width: 10vw;
+    height: 6vh;
+    right: 3vw;
+    border-radius: 1vw;
+    z-index: 1000;
+  }
+  .tooglenavlistbtn {
+    width: 3vw;
+    height: 10vh;
+    font-size: 0.5rem;
+    font-weight: 900;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  div {
+    width: 10vw;
+    height: 12vh;
+    margin-right: 0;
+    right: 0;
+    z-index: 2000;
+    .navcs {
+      width: 10vw;
+      height: 12vh;
+      margin-right: 0;
+      right: 0;
+      z-index: 2000;
+    }
+  }
+  .tooglenavlistdv {
+    width: 7vw;
+    height: 6vh;
+    right: 3vw;
+    border-radius: 1vw;
+    z-index: 1000;
+  }
+  .tooglenavlistbtn {
+    width: 3vw;
+    height: 10vh;
+    font-size: 0.5rem;
+    font-weight: 900;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  div {
+    width: 10vw;
+    height: 12vh;
+    margin-right: 0;
+    right: 0;
+    z-index: 2000;
+    .navcs {
+      width: 10vw;
+      height: 12vh;
+      margin-right: 0;
+      right: 0;
+      z-index: 2000;
+    }
+  }
+  .tooglenavlistdv {
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+    z-index: 1000;
+  }
+  .tooglenavlistbtn {
+    width: 3vw;
+    height: 10vh;
+    font-size: 0.5rem;
+    font-weight: 900;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  div {
+    width: 10vw;
+    height: 12vh;
+    margin-right: 0;
+    right: 0;
+    z-index: 2000;
+    .navcs {
+      width: 10vw;
+      height: 12vh;
+      margin-right: 0;
+      right: 0;
+      z-index: 2000;
+    }
+  }
+  .tooglenavlistdv {
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+    z-index: 1000;
+  }
+  .tooglenavlistbtn {
+    width: 3vw;
+    height: 10vh;
+    font-size: 0.5rem;
+    font-weight: 900;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1919px) {
+  div {
+    width: 10vw;
+    height: 12vh;
+    margin-right: 0;
+    right: 0;
+    z-index: 2000;
+    .navcs {
+      width: 10vw;
+      height: 12vh;
+      margin-right: 0;
+      right: 0;
+      z-index: 2000;
+    }
+  }
+  .tooglenavlistdv {
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+    z-index: 1000;
+  }
+  .tooglenavlistbtn {
+    width: 3vw;
+    height: 10vh;
+    font-size: 0.5rem;
+    font-weight: 900;
+  }
+}
+@media (min-width: 1920px) {
+  div {
+    width: 10vw;
+    height: 12vh;
+    margin-right: 0;
+    right: 0;
+    z-index: 2000;
+    .navcs {
+      width: 10vw;
+      height: 12vh;
+      margin-right: 0;
+      right: 0;
+      z-index: 2000;
+    }
+  }
+  .tooglenavlistdv {
+    width: 3.5vw;
+    height: 7vh;
+    right: 3vw;
+    border-radius: 1vw;
+    z-index: 1000;
+  }
+  .tooglenavlistbtn {
+    width: 3vw;
+    height: 10vh;
+    font-size: 0.5rem;
+    font-weight: 900;
+  }
 }
 </style>

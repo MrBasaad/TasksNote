@@ -64,33 +64,18 @@ const addTiketNum = async () => {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: yellow; */
-  width: 15vw;
-  height: 15vh;
   margin: auto;
   color: black;
-  /* border-radius: 10vw 5vw 0vw 0vw; */
   cursor: pointer;
-  font-size: 1.098em;
-  margin-top: 15vh;
   background: rgba(128, 128, 128, 0.486);
-  border-radius: 10vw 5vw 0vw 0vw;
-  transition: 1s;
 }
 .burgerList {
   display: flex;
-  width: 20vw;
-  height: 100vh;
   position: fixed;
   background-color: rgba(245, 222, 179, 0.432);
-  margin-right: 0vw;
-  right: 0vw;
-  z-index: 1000;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(10px);
-  transition: 1s;
   flex-direction: column;
 }
 .navcs {
@@ -98,29 +83,19 @@ const addTiketNum = async () => {
   position: absolute;
   justify-content: center;
   align-items: center;
-  width: 20vw;
-  height: 100vh;
   margin: auto;
   flex-direction: column;
 }
-
 .showTickets,
 .createTickets,
 .userData {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: yellow; */
-  width: 15vw;
-  height: 15vh;
   margin: auto;
   color: white;
-  /* border-radius: 10vw 5vw 0vw 0vw; */
   cursor: pointer;
-  font-size: 1.098em;
-  margin-top: 15vh;
 }
-
 .showTickets:hover,
 .createTickets:hover,
 .userData:hover {
@@ -128,27 +103,307 @@ const addTiketNum = async () => {
   border-radius: 10vw 5vw 0vw 0vw;
   transition: 1s;
 }
-
 .singout {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: yellow; */
-  width: 15vw;
-  height: 15vh;
   margin: auto;
   color: white;
-  /* border-radius: 10vw 5vw 0vw 0vw; */
   cursor: pointer;
-  font-size: 1.098em;
-  margin-top: 15vh;
   background-color: rgba(139, 0, 0, 0.342);
-  margin-top: 2vh;
 }
 
 .singout:hover {
   border-radius: 10vw 5vw 0vw 0vw;
   transition: 1s;
   background-color: rgba(255, 10, 10, 0.8);
+}
+@media (max-width: 480px) {
+  .activeLink {
+    width: fit-content;
+    height: 15vh;
+    padding: 0 2vw;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 15vh;
+    border-radius: 4vw;
+    transition: 1s;
+    color: darkblue;
+    text-decoration: underline !important;
+  }
+  .burgerList {
+    width: 100vw;
+    height: 100vh;
+    margin-right: 0vw;
+    right: 0vw;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: 1s;
+    text-wrap: nowrap;
+  }
+  .navcs {
+    width: 50vw;
+    height: 100vh;
+  }
+  .showTickets,
+  .createTickets,
+  .userData {
+    width: fit-content;
+    height: 15vh;
+    padding: 0 2vw;
+    font-size: 1rem;
+    margin-top: 15vh;
+    border-radius: 4vw;
+  }
+  .singout {
+    width: fit-content;
+    height: 15vh;
+    padding: 0 2vw;
+    font-size: 1rem;
+    margin-top: 15vh;
+    margin-bottom: 5vh;
+    border-radius: 4vw;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .activeLink {
+    width: fit-content;
+    height: 15vh;
+    padding: 0 2vw;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: underline;
+    color: darkblue;
+    margin-top: 15vh;
+    border-radius: 4vw;
+    transition: 1s;
+  }
+  .burgerList {
+    width: 35vw;
+    height: 100vh;
+    margin-right: 0vw;
+    right: 0vw;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: 1s;
+    text-wrap: nowrap;
+  }
+  .navcs {
+    width: fit-content;
+    height: 100vh;
+  }
+  .showTickets,
+  .createTickets,
+  .userData {
+    width: fit-content;
+    height: 15vh;
+    padding: 0 2vw;
+    font-size: 1.2rem;
+    margin-top: 15vh;
+    border-radius: 4vw;
+  }
+
+  .singout {
+    width: fit-content;
+    height: 15vh;
+    font-size: 1.2rem;
+    margin-top: 15vh;
+    margin-bottom: 2vh;
+    border-radius: 4vw;
+    padding: 0 2vw;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .activeLink {
+    width: fit-content;
+    height: 15vh;
+    padding: 0 2vw;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: underline;
+    color: darkblue;
+    margin-top: 15vh;
+    border-radius: 4vw;
+    transition: 1s;
+  }
+  .burgerList {
+    width: 35vw;
+    height: 100vh;
+    margin-right: 0vw;
+    right: 0vw;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: 1s;
+    text-wrap: nowrap;
+  }
+  .navcs {
+    width: fit-content;
+    height: 100vh;
+  }
+  .showTickets,
+  .createTickets,
+  .userData {
+    width: fit-content;
+    height: 15vh;
+    padding: 0 2vw;
+    font-size: 1.2rem;
+    margin-top: 15vh;
+    border-radius: 4vw;
+  }
+
+  .singout {
+    width: fit-content;
+    height: 15vh;
+    font-size: 1.2rem;
+    margin-top: 15vh;
+    margin-bottom: 2vh;
+    border-radius: 4vw;
+    padding: 0 2vw;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .activeLink {
+    width: fit-content;
+    height: 15vh;
+    padding: 0 2vw;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: underline;
+    color: darkblue;
+    margin-top: 15vh;
+    border-radius: 4vw;
+    transition: 1s;
+  }
+  .burgerList {
+    width: 35vw;
+    height: 100vh;
+    margin-right: 0vw;
+    right: 0vw;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: 1s;
+    text-wrap: nowrap;
+  }
+  .navcs {
+    width: fit-content;
+    height: 100vh;
+  }
+  .showTickets,
+  .createTickets,
+  .userData {
+    width: fit-content;
+    height: 15vh;
+    padding: 0 2vw;
+    font-size: 1.2rem;
+    margin-top: 15vh;
+    border-radius: 4vw;
+  }
+
+  .singout {
+    width: fit-content;
+    height: 15vh;
+    font-size: 1.2rem;
+    margin-top: 15vh;
+    margin-bottom: 2vh;
+    border-radius: 4vw;
+    padding: 0 2vw;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .activeLink {
+    width: fit-content;
+    height: 15vh;
+    padding: 0 2vw;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: underline;
+    color: darkblue;
+    margin-top: 15vh;
+    border-radius: 4vw;
+    transition: 1s;
+  }
+  .burgerList {
+    width: 35vw;
+    height: 100vh;
+    margin-right: 0vw;
+    right: 0vw;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: 1s;
+    text-wrap: nowrap;
+  }
+  .navcs {
+    width: fit-content;
+    height: 100vh;
+  }
+  .showTickets,
+  .createTickets,
+  .userData {
+    width: fit-content;
+    height: 15vh;
+    padding: 0 2vw;
+    font-size: 1.2rem;
+    margin-top: 15vh;
+    border-radius: 4vw;
+  }
+
+  .singout {
+    width: fit-content;
+    height: 15vh;
+    font-size: 1.2rem;
+    margin-top: 15vh;
+    margin-bottom: 2vh;
+    border-radius: 4vw;
+    padding: 0 2vw;
+  }
+}
+@media (min-width: 1920px) {
+  .activeLink {
+    width: fit-content;
+    height: 15vh;
+    padding: 0 2vw;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: underline;
+    color: darkblue;
+    margin-top: 15vh;
+    border-radius: 4vw;
+    transition: 1s;
+  }
+  .burgerList {
+    width: 35vw;
+    height: 100vh;
+    margin-right: 0vw;
+    right: 0vw;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: 1s;
+    text-wrap: nowrap;
+  }
+  .navcs {
+    width: fit-content;
+    height: 100vh;
+  }
+  .showTickets,
+  .createTickets,
+  .userData {
+    width: fit-content;
+    height: 15vh;
+    padding: 0 2vw;
+    font-size: 1.2rem;
+    margin-top: 15vh;
+    border-radius: 4vw;
+  }
+
+  .singout {
+    width: fit-content;
+    height: 15vh;
+    font-size: 1.2rem;
+    margin-top: 15vh;
+    margin-bottom: 2vh;
+    border-radius: 4vw;
+    padding: 0 2vw;
+  }
 }
 </style>

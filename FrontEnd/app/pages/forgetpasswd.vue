@@ -1,11 +1,11 @@
 <script setup lang="ts">
 // import { ref } from 'vue'
-import basaadlogo from '@/assets/photos/Basaad_logo.svg'
+import basaadlogo from "@/assets/photos/Basaad_logo.svg";
 // import { useUserStore } from '../stores/userStore'
-const userStore = useUserStore()
+const userStore = useUserStore();
 
-const email = ref<string>()
-const constheVal = () => console.log(email.value)
+const email = ref<string>();
+const constheVal = () => console.log(email.value);
 </script>
 <template>
   <main class="main">
@@ -16,17 +16,28 @@ const constheVal = () => console.log(email.value)
       <form class="userDataForm">
         <div class="userPasswdDiv">
           <h4 class="passwdUserNAmeText">البريد الإلكتروني</h4>
-          <input type="email" class="passwdUserInput" required v-model="email" />
+          <input
+            type="email"
+            class="passwdUserInput"
+            required
+            v-model="email"
+          />
         </div>
         <div class="btnLoging">
-          <button type="submit" class="btnLoginBTN" @click="constheVal">ارسال</button>
+          <button type="submit" class="btnLoginBTN" @click="constheVal">
+            ارسال
+          </button>
         </div>
       </form>
       <div class="noAccountDiv">
-        <RouterLink class="noAccountLink" to="/"> العودة الى تسجيل الدخول</RouterLink>
+        <RouterLink class="noAccountLink" to="/">
+          العودة الى تسجيل الدخول</RouterLink
+        >
       </div>
       <div class="forgetPasswdDiv">
-        <RouterLink class="forgetPasswdLink" to="/regester">ليس لديك حساب ؟</RouterLink>
+        <RouterLink class="forgetPasswdLink" to="/regester"
+          >ليس لديك حساب ؟</RouterLink
+        >
       </div>
     </div>
   </main>
@@ -437,6 +448,642 @@ const constheVal = () => console.log(email.value)
     //   font-size: 1vw;
     //   font-weight: 900;
     // }
+  }
+}
+@media (max-width: 480px) {
+  .main {
+    width: 100vw;
+    height: 100vh;
+    .mainDiv {
+      width: 70vw;
+      height: 90vh;
+      border-radius: 1.5vw;
+      .logoImgDiv {
+        width: 60vw;
+        height: 35vh;
+        border-radius: 1vw;
+        margin: 4vh;
+        .logoImg {
+          width: 60vw;
+          height: 16vh;
+        }
+      }
+      .userDataForm {
+        width: 60vw;
+        height: 50vh;
+        margin: 2vh;
+        .userNameDiv {
+          width: 60vw;
+          height: 10vh;
+          margin: 1vh;
+          top: 0vh;
+          .userNameText {
+            width: 60vw;
+            height: 3vh;
+            font-size: 0.75rem;
+            margin-bottom: 1.2vw;
+          }
+          .userNameInpute {
+            width: 60vw;
+            height: 5vh;
+            border-radius: 0.3vw;
+            padding: 1vw;
+            font-size: 0.75rem;
+          }
+          .userNameInpute:focus {
+            padding: 1vw;
+            font-size: 1vw;
+            font-weight: 900;
+          }
+        }
+        .userPasswdDiv {
+          width: 60vw;
+          height: 10vh;
+          margin: 1vh;
+          top: 0vh;
+          .passwdUserNAmeText {
+            width: 60vw;
+            height: 3vh;
+            font-size: 0.75rem;
+            margin-bottom: 1.2vw;
+          }
+          .passwdUserInput {
+            width: 60vw;
+            height: 5vh;
+            border-radius: 0.3vw;
+            padding: 1vw;
+            font-size: 0.75rem;
+          }
+          .passwdUserInput:focus {
+            padding: 1vw;
+            font-size: 0.75rem;
+            font-weight: 900;
+          }
+        }
+        .btnLoging {
+          width: 60vw;
+          height: 8vh;
+          margin: 1vh;
+          .btnLoginBTN {
+            padding: 1vw;
+            border-radius: 1vw;
+            width: 25vw;
+            height: 6vh;
+            font-size: 0.75rem;
+            font-weight: 900;
+            margin-top: 0.3vh;
+          }
+        }
+      }
+      .noAccountDiv {
+        width: 60vw;
+        height: 8vh;
+        top: -1vw;
+        .noAccountLink {
+          font-size: 0.55rem;
+          font-weight: 900;
+        }
+      }
+      .forgetPasswdDiv {
+        width: 60vw;
+        height: 8vh;
+        top: -2vh;
+        .forgetPasswdLink {
+          font-size: 0.45rem;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  .main {
+    width: 100vw;
+    height: 100vh;
+    .mainDiv {
+      width: 70vw;
+      height: 90vh;
+      border-radius: 1.5vw;
+      .logoImgDiv {
+        width: 60vw;
+        height: 35vh;
+        border-radius: 1vw;
+        margin: 4vh;
+        .logoImg {
+          width: 60vw;
+          height: 16vh;
+        }
+      }
+      .userDataForm {
+        width: 60vw;
+        height: 50vh;
+        margin: 2vh;
+        .userNameDiv {
+          width: 60vw;
+          height: 10vh;
+          margin: 1vh;
+          top: 0vh;
+          .userNameText {
+            width: 60vw;
+            height: 3vh;
+            font-size: 0.75rem;
+            margin-bottom: 1.2vw;
+          }
+          .userNameInpute {
+            width: 60vw;
+            height: 5vh;
+            border-radius: 0.3vw;
+            padding: 1vw;
+            font-size: 0.75rem;
+          }
+          .userNameInpute:focus {
+            padding: 1vw;
+            font-size: 1vw;
+            font-weight: 900;
+          }
+        }
+        .userPasswdDiv {
+          width: 60vw;
+          height: 10vh;
+          margin: 1vh;
+          top: 0vh;
+          .passwdUserNAmeText {
+            width: 60vw;
+            height: 3vh;
+            font-size: 0.75rem;
+            margin-bottom: 1.2vw;
+          }
+          .passwdUserInput {
+            width: 60vw;
+            height: 5vh;
+            border-radius: 0.3vw;
+            padding: 1vw;
+            font-size: 0.75rem;
+          }
+          .passwdUserInput:focus {
+            padding: 1vw;
+            font-size: 0.75rem;
+            font-weight: 900;
+          }
+        }
+        .btnLoging {
+          width: 60vw;
+          height: 8vh;
+          margin: 1vh;
+          .btnLoginBTN {
+            padding: 1vw;
+            border-radius: 1vw;
+            width: 25vw;
+            height: 6vh;
+            font-size: 0.75rem;
+            font-weight: 900;
+            margin-top: 0.3vh;
+          }
+        }
+      }
+      .noAccountDiv {
+        width: 60vw;
+        height: 8vh;
+        top: -1vw;
+        .noAccountLink {
+          font-size: 0.55rem;
+          font-weight: 900;
+        }
+      }
+      .forgetPasswdDiv {
+        width: 60vw;
+        height: 8vh;
+        top: -2vh;
+        .forgetPasswdLink {
+          font-size: 0.45rem;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .main {
+    width: 100vw;
+    height: 100vh;
+    .mainDiv {
+      width: 35vw;
+      height: 80vh;
+      border-radius: 1vw;
+      .logoImgDiv {
+        width: 25vw;
+        height: 30vh;
+        border-radius: 1vw;
+        margin: 4vh;
+        .logoImg {
+          width: 25vw;
+          height: 15vh;
+        }
+      }
+      .userDataForm {
+        width: 30vw;
+        height: 50vh;
+        margin: 2vh;
+        .userNameDiv {
+          width: 30vw;
+          height: 10vh;
+          margin: 1vh;
+          top: 0vh;
+          .userNameText {
+            width: 30vw;
+            height: 3vh;
+            font-size: 1.3vw;
+            margin-bottom: 1.2vw;
+          }
+          .userNameInpute {
+            width: 30vw;
+            height: 5vh;
+            border-radius: 0.3vw;
+            padding: 1vw;
+            font-size: 1vw;
+          }
+          .userNameInpute:focus {
+            padding: 1vw;
+            font-size: 1vw;
+            font-weight: 900;
+          }
+        }
+        .userPasswdDiv {
+          width: 30vw;
+          height: 10vh;
+          margin: 1vh;
+          top: 0vh;
+          .passwdUserNAmeText {
+            width: 30vw;
+            height: 3vh;
+            font-size: 1.3vw;
+            margin-bottom: 1.2vw;
+          }
+          .passwdUserInput {
+            width: 30vw;
+            height: 5vh;
+            border-radius: 0.3vw;
+            padding: 1vw;
+            font-size: 1vw;
+          }
+          .passwdUserInput:focus {
+            padding: 1vw;
+            font-size: 1vw;
+            font-weight: 900;
+          }
+        }
+        .btnLoging {
+          width: 30vw;
+          height: 8vh;
+          margin: 1vh;
+          .btnLoginBTN {
+            padding: 1vw;
+            border-radius: 0.5vw;
+            width: 15vw;
+            height: 7vh;
+            font-size: 1.5vw;
+            font-weight: 900;
+            margin-top: 0.3vh;
+          }
+        }
+      }
+      .noAccountDiv {
+        width: 30vw;
+        height: 8vh;
+        top: -1vw;
+        .noAccountLink {
+          font-size: 1vw;
+          font-weight: 900;
+        }
+      }
+      .forgetPasswdDiv {
+        width: 30vw;
+        height: 8vh;
+        top: -2vh;
+        .forgetPasswdLink {
+          font-size: 1vw;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .main {
+    width: 100vw;
+    height: 100vh;
+    .mainDiv {
+      width: 35vw;
+      height: 80vh;
+      border-radius: 1vw;
+      .logoImgDiv {
+        width: 25vw;
+        height: 30vh;
+        border-radius: 1vw;
+        margin: 4vh;
+        .logoImg {
+          width: 25vw;
+          height: 15vh;
+        }
+      }
+      .userDataForm {
+        width: 30vw;
+        height: 50vh;
+        margin: 2vh;
+        .userNameDiv {
+          width: 30vw;
+          height: 10vh;
+          margin: 1vh;
+          top: 0vh;
+          .userNameText {
+            width: 30vw;
+            height: 3vh;
+            font-size: 1.3vw;
+            margin-bottom: 1.2vw;
+          }
+          .userNameInpute {
+            width: 30vw;
+            height: 5vh;
+            border-radius: 0.3vw;
+            padding: 1vw;
+            font-size: 1vw;
+          }
+          .userNameInpute:focus {
+            padding: 1vw;
+            font-size: 1vw;
+            font-weight: 900;
+          }
+        }
+        .userPasswdDiv {
+          width: 30vw;
+          height: 10vh;
+          margin: 1vh;
+          top: 0vh;
+          .passwdUserNAmeText {
+            width: 30vw;
+            height: 3vh;
+            font-size: 1.3vw;
+            margin-bottom: 1.2vw;
+          }
+          .passwdUserInput {
+            width: 30vw;
+            height: 5vh;
+            border-radius: 0.3vw;
+            padding: 1vw;
+            font-size: 1vw;
+          }
+          .passwdUserInput:focus {
+            padding: 1vw;
+            font-size: 1vw;
+            font-weight: 900;
+          }
+        }
+        .btnLoging {
+          width: 30vw;
+          height: 8vh;
+          margin: 1vh;
+          .btnLoginBTN {
+            padding: 1vw;
+            border-radius: 0.5vw;
+            width: 15vw;
+            height: 7vh;
+            font-size: 1.5vw;
+            font-weight: 900;
+            margin-top: 0.3vh;
+          }
+        }
+      }
+      .noAccountDiv {
+        width: 30vw;
+        height: 8vh;
+        top: -1vw;
+        .noAccountLink {
+          font-size: 1vw;
+          font-weight: 900;
+        }
+      }
+      .forgetPasswdDiv {
+        width: 30vw;
+        height: 8vh;
+        top: -2vh;
+        .forgetPasswdLink {
+          font-size: 1vw;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1200px) and (max-width: 1919px) {
+  .main {
+    width: 100vw;
+    height: 100vh;
+    .mainDiv {
+      width: 35vw;
+      height: 80vh;
+      border-radius: 1vw;
+      .logoImgDiv {
+        width: 25vw;
+        height: 30vh;
+        border-radius: 1vw;
+        margin: 4vh;
+        .logoImg {
+          width: 25vw;
+          height: 15vh;
+        }
+      }
+      .userDataForm {
+        width: 30vw;
+        height: 50vh;
+        margin: 2vh;
+        .userNameDiv {
+          width: 30vw;
+          height: 10vh;
+          margin: 1vh;
+          top: 0vh;
+          .userNameText {
+            width: 30vw;
+            height: 3vh;
+            font-size: 1.3vw;
+            margin-bottom: 1.2vw;
+          }
+          .userNameInpute {
+            width: 30vw;
+            height: 5vh;
+            border-radius: 0.3vw;
+            padding: 1vw;
+            font-size: 1vw;
+          }
+          .userNameInpute:focus {
+            padding: 1vw;
+            font-size: 1vw;
+            font-weight: 900;
+          }
+        }
+        .userPasswdDiv {
+          width: 30vw;
+          height: 10vh;
+          margin: 1vh;
+          top: 0vh;
+          .passwdUserNAmeText {
+            width: 30vw;
+            height: 3vh;
+            font-size: 1.3vw;
+            margin-bottom: 1.2vw;
+          }
+          .passwdUserInput {
+            width: 30vw;
+            height: 5vh;
+            border-radius: 0.3vw;
+            padding: 1vw;
+            font-size: 1vw;
+          }
+          .passwdUserInput:focus {
+            padding: 1vw;
+            font-size: 1vw;
+            font-weight: 900;
+          }
+        }
+        .btnLoging {
+          width: 30vw;
+          height: 8vh;
+          margin: 1vh;
+          .btnLoginBTN {
+            padding: 1vw;
+            border-radius: 0.5vw;
+            width: 15vw;
+            height: 7vh;
+            font-size: 1.5vw;
+            font-weight: 900;
+            margin-top: 0.3vh;
+          }
+        }
+      }
+      .noAccountDiv {
+        width: 30vw;
+        height: 8vh;
+        top: -1vw;
+        .noAccountLink {
+          font-size: 1vw;
+          font-weight: 900;
+        }
+      }
+      .forgetPasswdDiv {
+        width: 30vw;
+        height: 8vh;
+        top: -2vh;
+        .forgetPasswdLink {
+          font-size: 1vw;
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1920px) {
+  .main {
+    width: 100vw;
+    height: 100vh;
+    .mainDiv {
+      width: 35vw;
+      height: 80vh;
+      border-radius: 1vw;
+      .logoImgDiv {
+        width: 25vw;
+        height: 30vh;
+        border-radius: 1vw;
+        margin: 4vh;
+        .logoImg {
+          width: 25vw;
+          height: 15vh;
+        }
+      }
+      .userDataForm {
+        width: 30vw;
+        height: 50vh;
+        margin: 2vh;
+        .userNameDiv {
+          width: 30vw;
+          height: 10vh;
+          margin: 1vh;
+          top: 0vh;
+          .userNameText {
+            width: 30vw;
+            height: 3vh;
+            font-size: 1.3vw;
+            margin-bottom: 1.2vw;
+          }
+          .userNameInpute {
+            width: 30vw;
+            height: 5vh;
+            border-radius: 0.3vw;
+            padding: 1vw;
+            font-size: 1vw;
+          }
+          .userNameInpute:focus {
+            padding: 1vw;
+            font-size: 1vw;
+            font-weight: 900;
+          }
+        }
+        .userPasswdDiv {
+          width: 30vw;
+          height: 10vh;
+          margin: 1vh;
+          top: 0vh;
+          .passwdUserNAmeText {
+            width: 30vw;
+            height: 3vh;
+            font-size: 1.3vw;
+            margin-bottom: 1.2vw;
+          }
+          .passwdUserInput {
+            width: 30vw;
+            height: 5vh;
+            border-radius: 0.3vw;
+            padding: 1vw;
+            font-size: 1vw;
+          }
+          .passwdUserInput:focus {
+            padding: 1vw;
+            font-size: 1vw;
+            font-weight: 900;
+          }
+        }
+        .btnLoging {
+          width: 30vw;
+          height: 8vh;
+          margin: 1vh;
+          .btnLoginBTN {
+            padding: 1vw;
+            border-radius: 0.5vw;
+            width: 15vw;
+            height: 7vh;
+            font-size: 1.5vw;
+            font-weight: 900;
+            margin-top: 0.3vh;
+          }
+        }
+      }
+      .noAccountDiv {
+        width: 30vw;
+        height: 8vh;
+        top: -1vw;
+        .noAccountLink {
+          font-size: 1vw;
+          font-weight: 900;
+        }
+      }
+      .forgetPasswdDiv {
+        width: 30vw;
+        height: 8vh;
+        top: -2vh;
+        .forgetPasswdLink {
+          font-size: 1vw;
+          font-weight: 900;
+        }
+      }
+    }
   }
 }
 </style>
