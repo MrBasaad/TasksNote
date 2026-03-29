@@ -18,7 +18,7 @@ const singin = async () => {
       console.log("you must enter any data in name and password fields");
       return;
     }
-    const response = await $fetch("http://localhost:9009/singin", {
+    const response = await $fetch("/Endpoint/singin", {
       method: "POST",
       credentials: "include",
       headers: {
