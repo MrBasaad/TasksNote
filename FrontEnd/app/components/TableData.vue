@@ -70,8 +70,8 @@ onMounted(() => {
 //-------------------
 </script>
 <template>
-  <table class="tablecs" v-if="isEmpth == false">
-    <thead class="theadcs">
+  <table class="tableDatadiv" v-if="isEmpth == false">
+    <thead class="theadDiv">
       <tr class="trowforheaad">
         <th>رقم الصف</th>
         <th>تاريخ التذكرة</th>
@@ -80,15 +80,17 @@ onMounted(() => {
         <th>حالة التذكرة</th>
       </tr>
     </thead>
-    <tbody class="tbodycs" id="tbodycs">
+    <tbody class="mask" id="tbodycs">
       <tr
         :id="data.ticketnumber.toString()"
-        class="trowforbody"
+        class="tbodycs ks"
         v-for="(data, index) in allData"
         :key="index"
       >
-        <td id="fnam" class="fnam">{{ index + 1 }}</td>
-        <td>{{ new Date(data.rowdate).toISOString().split("T")[0] }}</td>
+        <td id="fnam" class="rownumtd">{{ index + 1 }}</td>
+        <td class="date">
+          {{ new Date(data.rowdate).toISOString().split("T")[0] }}
+        </td>
         <td>{{ data.ticketnumber }}</td>
         <td>
           {{
@@ -113,99 +115,185 @@ onMounted(() => {
   </div>
 </template>
 <style lang="scss" scoped>
-.tablecs {
-  // position: absolute;
-  border-collapse: collapse;
-  table-layout: fixed;
-  // display: flex;
-  width: 80vw;
-  min-height: 100vh;
+// .tablecs {
+//   // position: absolute;
+//   border-collapse: collapse;
+//   table-layout: fixed;
+//   // display: flex;
+//   width: 80vw;
+//   min-height: 100vh;
+//   justify-content: center;
+//   align-items: center;
+//   margin: auto;
+//   margin-top: 2vh;
+// }
+
+// .theadcs {
+//   border-collapse: collapse;
+//   table-layout: fixed;
+//   display: inline-table;
+//   // position: absolute;
+//   width: 80vw;
+//   height: 4vh;
+//   justify-content: center;
+//   align-items: center;
+//   background-color: #414242;
+//   margin-top: 0vh;
+//   top: 0vh;
+// }
+// .trowforheaad {
+//   border-collapse: collapse;
+//   table-layout: fixed;
+//   display: table-header-group;
+//   position: relative;
+//   margin: auto;
+//   width: 80vw;
+//   height: 4vh;
+//   justify-content: center;
+//   align-items: center;
+//   color: white;
+//   font-size: 0.9rem;
+//   font-weight: 900;
+//   text-align: center;
+// }
+// .tbodycs {
+//   border-collapse: collapse;
+//   table-layout: fixed;
+//   display: table;
+//   // position: absolute;
+//   margin: auto;
+//   width: 80vw;
+//   height: 6vh;
+//   justify-content: center;
+//   align-items: center;
+//   top: 5vh;
+// }
+// .trowforbody {
+//   border-collapse: collapse;
+//   table-layout: fixed;
+//   display: table-row-group;
+//   position: relative;
+//   margin: auto;
+//   width: 80vw;
+//   height: 6vh;
+//   justify-content: center;
+//   align-items: center;
+//   text-align: center;
+//   font-size: 0.75em;
+//   font-weight: 900;
+// }
+// .trowforbody:hover {
+//   transform: translateY(-0.2vw);
+//   transition: 1.2s;
+//   margin: 1vw 0vw;
+//   padding: 1vw 0vw;
+//   z-index: 1000;
+//   font-size: 1.1em;
+//   background: rgba(255, 255, 255, 0.151);
+//   cursor: pointer;
+// }
+// tr,
+// td {
+//   width: 13vw;
+// }
+
+// @media (max-width: 480px) {
+// }
+
+// @media (min-width: 481px) and (max-width: 767px) {
+// }
+// @media (min-width: 992px) and (max-width: 1199px) {
+// }
+// @media (min-width: 768px) and (max-width: 991px) {
+// }
+// @media (min-width: 1200px) and (max-width: 1919px) {
+// }
+// @media (min-width: 1920px) {
+// }
+
+/*================= TABLE ================= */
+.maintablediv {
+  width: 100vw;
+  display: flex;
   justify-content: center;
-  align-items: center;
-  margin: auto;
+  direction: rtl;
   margin-top: 2vh;
 }
 
-.theadcs {
+.tableDatadiv {
+  width: 85vw;
   border-collapse: collapse;
   table-layout: fixed;
-  display: inline-table;
-  // position: absolute;
-  width: 80vw;
-  height: 4vh;
-  justify-content: center;
-  align-items: center;
-  background-color: #414242;
-  margin-top: 0vh;
-  top: 0vh;
+  // background: #ffffff;
+  border-radius: 0.8vw;
+  overflow: hidden;
 }
+
+/* header */
+
+.theadDiv {
+  background: #414242;
+  color: #fff;
+}
+
 .trowforheaad {
-  border-collapse: collapse;
-  table-layout: fixed;
-  display: table-header-group;
-  position: relative;
-  margin: auto;
-  width: 80vw;
-  height: 4vh;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 0.9rem;
-  font-weight: 900;
-  text-align: center;
-}
-.tbodycs {
-  border-collapse: collapse;
-  table-layout: fixed;
-  display: table;
-  // position: absolute;
-  margin: auto;
-  width: 80vw;
   height: 6vh;
-  justify-content: center;
-  align-items: center;
-  top: 5vh;
-}
-.trowforbody {
-  border-collapse: collapse;
-  table-layout: fixed;
-  display: table-row-group;
-  position: relative;
-  margin: auto;
-  width: 80vw;
-  height: 6vh;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 0.75em;
-  font-weight: 900;
-}
-.trowforbody:hover {
-  transform: translateY(-0.2vw);
-  transition: 1.2s;
-  margin: 1vw 0vw;
-  padding: 1vw 0vw;
-  z-index: 1000;
-  font-size: 1.1em;
-  background: rgba(255, 255, 255, 0.151);
-  cursor: pointer;
-}
-tr,
-td {
-  width: 13vw;
+  font-size: 1vw;
+  font-weight: 800;
 }
 
-@media (max-width: 480px) {
+/* cells */
+
+.tableDatadiv th,
+.tableDatadiv td {
+  padding: 0.8vh 0.5vw;
+  text-align: center;
 }
 
-@media (min-width: 481px) and (max-width: 767px) {
+/* hover */
+
+.tbodycs:hover {
+  background: #f2f2f2;
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+
+/* column widths */
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 767px) {
+  .tableDatadiv {
+    width: 96vw;
+  }
+
+  .trowforheaad {
+    font-size: 0.6rem;
+  }
+  .tableDatadiv td {
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-wrap-style: balance;
+    text-wrap: wrap;
+    word-wrap: break-word;
+  }
 }
+
+/* ================= TABLET ================= */
+
 @media (min-width: 768px) and (max-width: 991px) {
+  .tableDatadiv {
+    width: 92vw;
+    font-size: 1rem;
+    font-weight: bold;
+  }
 }
-@media (min-width: 1200px) and (max-width: 1919px) {
-}
-@media (min-width: 1920px) {
+
+/* ================= LARGE SCREENS ================= */
+
+@media (min-width: 1600px) {
+  .tableDatadiv {
+    width: 70vw;
+    font-size: 1rem;
+    font-weight: bold;
+  }
 }
 </style>

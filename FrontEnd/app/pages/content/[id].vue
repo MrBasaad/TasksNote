@@ -668,6 +668,15 @@ onMounted(async () => {
   .inputtaske {
     font-size: 3vw;
   }
+  .datehd {
+    display: none;
+  }
+  .datetd {
+    display: none;
+  }
+  .dateput {
+    display: none;
+  }
 }
 
 /* ================= TABLET ================= */

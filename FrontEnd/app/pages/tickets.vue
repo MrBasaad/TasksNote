@@ -29,6 +29,9 @@ const addTiketNum = async () => {
     console.error(`Error Message:${error}`);
   }
 };
+onMounted(() => {
+  document.addEventListener("click", async () => {});
+});
 </script>
 <template>
   <div class="mains">
@@ -37,7 +40,11 @@ const addTiketNum = async () => {
         <div class="createtikectdv" @click="addTiketNum">
           <p class="createtikectbtn">إنشاء تذكرة</p>
         </div>
-        <select data-placeholder="فلترة" class="filterdv" name="tg">
+        <select
+          data-placeholder="فلترة"
+          :class="[isEmpthy ? 'nulls' : 'filterdv']"
+          name="tg"
+        >
           <optgroup class="ops" label="حسب رقم التذكرة">
             <option value="newTikect" selected>الاحدث</option>
             <option value="oldTikect">الاقدم</option>
@@ -61,6 +68,9 @@ const addTiketNum = async () => {
   </div>
 </template>
 <style lang="scss" scoped>
+.nulls {
+  display: none;
+}
 .mains {
   display: flex;
   flex-direction: column;
@@ -128,6 +138,7 @@ const addTiketNum = async () => {
 @media (max-width: 480px) {
   .mains {
     width: 100vw;
+    min-height: 100vh;
   }
   .headercs {
     width: 100vw;
@@ -170,6 +181,7 @@ const addTiketNum = async () => {
 @media (min-width: 481px) and (max-width: 767px) {
   .mains {
     width: 100vw;
+    min-height: 100vh;
   }
   .headercs {
     width: 100vw;
@@ -211,6 +223,7 @@ const addTiketNum = async () => {
 @media (min-width: 768px) and (max-width: 991px) {
   .mains {
     width: 100vw;
+    min-height: 100vh;
   }
   .headercs {
     width: 100vw;
@@ -252,6 +265,7 @@ const addTiketNum = async () => {
 @media (min-width: 992px) and (max-width: 1199px) {
   .mains {
     width: 100vw;
+    min-height: 100vh;
   }
   .headercs {
     width: 100vw;
@@ -293,6 +307,7 @@ const addTiketNum = async () => {
 @media (min-width: 1200px) and (max-width: 1919px) {
   .mains {
     width: 100vw;
+    min-height: 100vh;
   }
   .headercs {
     width: 100vw;
@@ -334,6 +349,7 @@ const addTiketNum = async () => {
 @media (min-width: 1920px) {
   .mains {
     width: 100vw;
+    min-height: 100vh;
   }
   .headercs {
     width: 100vw;
