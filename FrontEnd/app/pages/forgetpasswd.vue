@@ -5,6 +5,7 @@ import basaadlogo from "@/assets/photos/Basaad_logo.svg";
 const userStore = useUserStore();
 
 const email = ref<string>();
+const { isNullable } = notNullFeild(email);
 const constheVal = () => console.log(email.value);
 </script>
 <template>

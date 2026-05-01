@@ -1,22 +1,17 @@
 <script setup lang="ts">
-// import basaadlogo from "@/assets/photos/Basaad_logo.svg";
-import { notNullFeild } from "~/composables/notNullableFields";
-// import { useUserStore } from "@/stores/userStore.ts";
-
-// //-----------
-// const router = useRouter();
+// import notNullFeild from "../composables/notNullableFields";
 const userName = ref<string>("");
 const passwd = ref<string>("");
 const userStore = useUserStore();
-
-// //------------
-
-// //-----------
+const { isNullable } = notNullFeild(userName, passwd);
+const message = ref<string>("");
+const trigerPoup = ref<boolean>(false);
 const singin = async () => {
   try {
-    if (notNullFeild(userName.value, passwd.value) === true) {
-      console.log("you must enter any data in name and password fields");
-      return;
+    if (isNullable) {
+      trigerPoup.value = true;
+      return (message.value =
+        "you must enter any data in name and password fields");
     }
     const response = await $fetch("/Endpoint/singin", {
       method: "POST",
@@ -35,6 +30,13 @@ const singin = async () => {
     console.error(`Error Message:${err.response?.data || err.message}`);
   }
 };
+watch(trigerPoup, (newValue) => {
+  if (newValue === true) {
+    setTimeout(() => {
+      trigerPoup.value = false;
+    }, 5000);
+  }
+});
 </script>
 <template>
   <main class="main">
@@ -81,6 +83,9 @@ const singin = async () => {
           >نسيت كلمة المرور</NuxtLink
         >
       </div>
+    </div>
+    <div>
+      <PoupUp v-if="trigerPoup" :message="message" color="red" bg="darkred" />
     </div>
   </main>
 </template>

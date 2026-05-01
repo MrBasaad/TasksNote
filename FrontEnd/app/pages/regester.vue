@@ -7,6 +7,7 @@ import basaadlogo from "@/assets/photos/Basaad_logo.svg";
 const userName = ref<string>();
 const email = ref<string>();
 const passwd = ref<number>();
+const { isNullable } = notNullFeild(userName, passwd, email);
 
 const postData = async () => {
   try {
