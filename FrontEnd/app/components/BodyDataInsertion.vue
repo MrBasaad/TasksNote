@@ -403,6 +403,9 @@ const addNewRow = () => {
   .inputtaske {
     font-size: 1rem;
   }
+  .datetd {
+    display: none;
+  }
 }
 
 /* ================= TABLET ================= */

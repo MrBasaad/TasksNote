@@ -263,7 +263,7 @@ const singin = async () => {
             height: 5vh;
             border-radius: 0.3vw;
             padding: 1vw;
-            font-size: 0.75rem;
+            font-size: 1rem;
           }
           .userNameInpute:focus {
             padding: 1vw;
@@ -287,7 +287,7 @@ const singin = async () => {
             height: 5vh;
             border-radius: 0.3vw;
             padding: 1vw;
-            font-size: 0.75rem;
+            font-size: 1rem;
           }
           .passwdUserInput:focus {
             padding: 1vw;
@@ -369,7 +369,7 @@ const singin = async () => {
             height: 5vh;
             border-radius: 0.3vw;
             padding: 1vw;
-            font-size: 0.75rem;
+            font-size: 1rem;
           }
           .userNameInpute:focus {
             padding: 1vw;
@@ -393,7 +393,7 @@ const singin = async () => {
             height: 5vh;
             border-radius: 0.3vw;
             padding: 1vw;
-            font-size: 0.75rem;
+            font-size: 1rem;
           }
           .passwdUserInput:focus {
             padding: 1vw;
@@ -475,11 +475,11 @@ const singin = async () => {
           height: 5vh;
           border-radius: 0.3vw;
           padding: 1vw;
-          font-size: 1vw;
+          font-size: 0.75rem;
         }
         .userNameInpute:focus {
           padding: 1vw;
-          font-size: 1vw;
+          font-size: 1rem;
           font-weight: 900;
         }
       }
@@ -499,12 +499,12 @@ const singin = async () => {
           height: 5vh;
           border-radius: 0.3vw;
           padding: 1vw;
-          font-size: 1vw;
+          font-size: 0.75rem;
         }
 
         .passwdUserInput:focus {
           padding: 1vw;
-          font-size: 1vw;
+          font-size: 1rem;
           font-weight: 900;
         }
       }

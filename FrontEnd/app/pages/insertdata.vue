@@ -754,10 +754,11 @@ onMounted(async () => {
   bottom: 0vh;
   left: 0vw;
   margin-left: 1vw;
-  width: 10vw;
+  width: fit-content;
   height: 5vh;
   z-index: 1000;
   border-radius: 1vw;
+  padding: 1vh 1.5vw;
 }
 /* ================= MOBILE ================= */
 
@@ -777,6 +778,9 @@ onMounted(async () => {
   }
   .inputtaske {
     font-size: 2rem;
+  }
+  .datehd {
+    display: none;
   }
 }
 
