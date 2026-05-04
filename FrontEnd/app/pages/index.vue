@@ -10,12 +10,12 @@ const singin = async () => {
   try {
     if (!isNullable.value) {
       trigerPoup.value = true;
-      return (message.value =
-        "you must enter any data in name and password fields");
+      return (message.value = "يجب ادخال اسم مستخدم وكلمة مرور");
     }
-    const response = await $fetch("/Endpoint/singin", {
+    const response = await $fetch.raw("/Endpoint/singin", {
       method: "POST",
       credentials: "include",
+      ignoreResponseError: true,
       headers: {
         "Content-Type": "application/json",
       },
@@ -24,8 +24,12 @@ const singin = async () => {
         passwd: passwd.value,
       },
     });
+    if (response.status === 502) {
+      trigerPoup.value = true;
+      return (message.value = "السيرفر خارج الخدمة حاليا");
+    }
     await userStore.fetchUser();
-    await navigateTo(response.redirectPath);
+    await navigateTo(response._data.redirectPath);
   } catch (err: any) {
     console.error(`Error Message:${err.response?.data || err.message}`);
   }

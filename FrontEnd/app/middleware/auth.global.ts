@@ -2,14 +2,11 @@
 export default defineNuxtRouteMiddleware(async (to, from) => {
   // 1. تخطي التنفيذ على السيرفر إذا كان الكود يحتاج للمتصفح فقط
   if (import.meta.server) return 
-
   const userStore = useUserStore()
-
   // 2. التحقق من الصلاحيات
   if (to.meta.requiresAuth && !userStore.name) {
     return navigateTo('/')
   }
-
   // 3. جلب البيانات ومنع التكرار اللانهائي
   if (userStore.name === '') {
     try {
@@ -24,4 +21,5 @@ export default defineNuxtRouteMiddleware(async (to, from) => {
       return navigateTo('/')
     }
   }
-})
+});
+  
