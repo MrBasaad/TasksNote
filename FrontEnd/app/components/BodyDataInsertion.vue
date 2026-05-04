@@ -136,118 +136,6 @@ const addNewRow = () => {
   </tbody>
 </template>
 <style scoped lang="scss">
-// .tbodycs {
-//   border-collapse: collapse;
-//   table-layout: fixed;
-//   display: table-row;
-//   margin: auto;
-
-//   // margin-top: 1.5vh;
-// }
-// .tbodycs:hover {
-//   background: #414242;
-//   border-radius: 1vw;
-// }
-
-// .rownumtd {
-//   display: table-cell;
-//   text-align: center;
-//   border-collapse: collapse;
-// }
-// .datetd * {
-//   width: 7.5vw;
-//   display: table-cell;
-//   text-align: center;
-//   border-collapse: collapse;
-// }
-
-// .dateput {
-//   border: none;
-//   background-color: transparent;
-//   font-weight: bold;
-//   outline: none;
-//   text-align: center;
-// }
-// .inputediv {
-//   /* background: aqua; */
-//   width: 50vw;
-//   position: relative;
-//   margin: auto;
-//   height: 6vh;
-//   justify-content: center;
-//   align-items: center;
-// }
-
-// .inputtaske {
-//   display: flex;
-//   position: relative;
-//   margin: auto;
-//   width: 50vw;
-//   height: 6vh;
-//   background-color: transparent;
-//   border: none;
-//   outline: none;
-//   overflow: hidden;
-//   resize: none;
-//   font-size: 1vw;
-//   font-weight: 900;
-//   justify-content: center;
-//   align-items: center;
-//   padding: 1vw;
-//   color: white;
-// }
-
-// .radios {
-//   width: 7.5vw;
-//   display: table-cell;
-//   text-align: center;
-//   border-collapse: collapse;
-// }
-// .bigdiv {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   /* background: #000; */
-//   /* max-width: 7.5vw; */
-//   width: 7.5vw;
-// }
-
-// .bigdiv div {
-//   display: flex;
-//   flex-direction: column;
-//   margin: 0vh 1vw;
-// }
-
-// tr,
-// td {
-//   width: 7.5vw;
-// }
-// .donediv {
-//   display: table-cell;
-//   text-align: center;
-//   border-collapse: collapse;
-// }
-// .donept {
-//   display: table-cell;
-//   text-align: center;
-//   border-collapse: collapse;
-// }
-// @media (max-width: 480px) {
-// }
-
-// @media (min-width: 481px) and (max-width: 767px) {
-// }
-// @media (min-width: 992px) and (max-width: 1199px) {
-// }
-// @media (min-width: 768px) and (max-width: 991px) {
-// }
-// @media (min-width: 1200px) and (max-width: 1919px) {
-// }
-// @media (min-width: 1920px) {
-// }
-
-/* ================= TABLE ================= */
-
 .maintablediv {
   width: 100vw;
   display: flex;
@@ -265,8 +153,6 @@ const addNewRow = () => {
   overflow: hidden;
 }
 
-/* header */
-
 .theadDiv {
   background: #414242;
   color: #fff;
@@ -278,21 +164,15 @@ const addNewRow = () => {
   font-weight: 800;
 }
 
-/* cells */
-
 .tableDatadiv th,
 .tableDatadiv td {
   padding: 0.8vh 0.5vw;
   text-align: center;
 }
 
-/* hover */
-
 .tbodycs:hover {
   background: #f2f2f2;
 }
-
-/* column widths */
 
 .rownumhd,
 .rownumtd {
@@ -317,8 +197,6 @@ const addNewRow = () => {
 .donediv {
   width: 5vw;
 }
-
-/* ================= INPUTS ================= */
 
 .dateput {
   width: 100%;
@@ -345,8 +223,6 @@ const addNewRow = () => {
   padding: 0.5vw;
   line-height: 1.4;
 }
-
-/* radios */
 
 .bigdiv {
   display: flex;
@@ -384,7 +260,6 @@ const addNewRow = () => {
   z-index: 1000;
   border-radius: 1vw;
 }
-/* ================= MOBILE ================= */
 
 @media (max-width: 767px) {
   .invoNumberDiv {
@@ -408,8 +283,6 @@ const addNewRow = () => {
   }
 }
 
-/* ================= TABLET ================= */
-
 @media (min-width: 768px) and (max-width: 991px) {
   .tableDatadiv {
     width: 92vw;
@@ -419,8 +292,6 @@ const addNewRow = () => {
     font-size: 1.8vw;
   }
 }
-
-/* ================= LARGE SCREENS ================= */
 
 @media (min-width: 1600px) {
   .tableDatadiv {

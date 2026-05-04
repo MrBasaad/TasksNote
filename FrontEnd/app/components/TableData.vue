@@ -104,8 +104,6 @@ onMounted(() => {
   </div>
 </template>
 <style lang="scss" scoped>
-/*================= TABLE ================= */
-
 .tableDatadiv {
   width: 85vw;
   border-collapse: collapse;
@@ -117,8 +115,6 @@ onMounted(() => {
   margin-top: 2vh;
   margin-bottom: 2vh;
 }
-
-/* header */
 
 .theadDiv {
   background: #414242;
@@ -136,8 +132,6 @@ onMounted(() => {
   padding: 0.8vh 0.5vw;
 }
 
-/* cells */
-
 .tableDatadiv td {
   padding: 0.8vh 0.5vw;
   text-align: center;
@@ -147,7 +141,6 @@ onMounted(() => {
   height: 6vh;
 }
 
-/* hover */
 .tbodycs:hover {
   transform: translateY(-0.2vw);
   transition: 1.2s;
@@ -156,9 +149,6 @@ onMounted(() => {
   cursor: pointer;
 }
 
-/* column widths */
-
-/* ================= MOBILE ================= */
 @media (max-width: 190px) {
   .dateth {
     display: none;
@@ -184,8 +174,6 @@ onMounted(() => {
   }
 }
 
-/* ================= TABLET ================= */
-
 @media (min-width: 768px) and (max-width: 991px) {
   .tableDatadiv {
     width: 92vw;
@@ -193,8 +181,6 @@ onMounted(() => {
     font-weight: bold;
   }
 }
-
-/* ================= LARGE SCREENS ================= */
 
 @media (min-width: 1600px) {
   .tableDatadiv {

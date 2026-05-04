@@ -170,280 +170,6 @@ onMounted(async () => {
 </template>
 
 <style lang="scss" scoped>
-// .main {
-//   background: darkcyan;
-// }
-// .headersdiv {
-//   display: flex;
-//   position: relative;
-//   justify-content: center;
-//   align-items: center;
-//   margin: auto;
-// }
-// .navcs {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   margin: auto;
-// }
-// .invoNumberDiv {
-//   display: flex;
-//   position: absolute;
-//   justify-content: center;
-//   align-items: center;
-//   background: #414242;
-//   color: #fff;
-// }
-// // .invonumberdata {
-// // }
-// .editOrSaveVtnDiv {
-//   display: flex;
-//   position: absolute;
-//   justify-content: center;
-//   align-items: center;
-// }
-// .editbtn {
-//   display: flex;
-//   position: relative;
-//   justify-content: center;
-//   align-items: center;
-//   background-color: transparent;
-//   outline: none;
-//   border: none;
-//   cursor: pointer;
-//   background: #414242;
-//   border-radius: 1vw;
-//   color: #fff;
-// }
-// .savebtn {
-//   display: flex;
-//   position: relative;
-//   justify-content: center;
-//   align-items: center;
-//   background-color: transparent;
-//   outline: none;
-//   border: none;
-//   cursor: pointer;
-//   background: #414242;
-//   color: #fff;
-// }
-// .maintablediv {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   margin: auto;
-//   direction: rtl;
-// }
-// .tableDatadiv {
-//   border-collapse: collapse;
-//   table-layout: fixed;
-// }
-// .theadDiv {
-//   background-color: #414242;
-//   color: white;
-// }
-// .tableDatadiv th,
-// .tableDatadiv td {
-//   text-align: center;
-// }
-// .trowforheaad {
-//   border-collapse: collapse;
-//   table-layout: fixed;
-//   text-align: center;
-// }
-// // .rownumhd {
-// // }
-// // .datehd {
-// //   width: 7.5vw;
-// // }
-// .texthead {
-//   margin: auto;
-//   justify-content: center;
-//   align-items: center;
-// }
-// .tikettimehd {
-//   position: relative;
-//   justify-content: center;
-//   align-items: center;
-//   margin: auto;
-// }
-// .tbodycs {
-//   border-collapse: collapse;
-//   table-layout: fixed;
-//   display: table-row;
-//   margin: auto;
-// }
-// .tbodycs:hover {
-//   background: #414242;
-// }
-// .rownumtd {
-//   display: table-cell;
-//   text-align: center;
-//   border-collapse: collapse;
-// }
-// .datetd * {
-//   display: table-cell;
-//   text-align: center;
-//   border-collapse: collapse;
-// }
-// .dateput {
-//   border: none;
-//   background-color: transparent;
-//   font-weight: bold;
-//   outline: none;
-//   text-align: center;
-// }
-// .inputediv {
-//   position: relative;
-//   margin: auto;
-//   justify-content: center;
-//   align-items: center;
-// }
-// .inputtaske {
-//   display: flex;
-//   position: relative;
-//   margin: auto;
-//   background-color: transparent;
-//   border: none;
-//   outline: none;
-//   overflow: hidden;
-//   resize: none;
-//   justify-content: center;
-//   align-items: center;
-// }
-// .radios {
-//   display: table-cell;
-//   text-align: center;
-//   border-collapse: collapse;
-// }
-// .bigdiv {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-// .bigdiv div {
-//   display: flex;
-//   flex-direction: column;
-// }
-// .donediv {
-//   display: table-cell;
-//   text-align: center;
-//   border-collapse: collapse;
-// }
-// .donept {
-//   display: table-cell;
-//   text-align: center;
-//   border-collapse: collapse;
-// }
-// @media (max-width: 480px) {
-// }
-
-// @media (min-width: 481px) and (max-width: 767px) {
-// }
-// @media (min-width: 992px) and (max-width: 1199px) {
-// }
-// @media (min-width: 768px) and (max-width: 991px) {
-// }
-// @media (min-width: 1200px) and (max-width: 1919px) {
-//   .main {
-//     width: 100vw;
-//     min-height: 100vh;
-//   }
-//   .headersdiv {
-//     width: 100vw;
-//     height: 12vh;
-//   }
-//   .navcs {
-//     width: 100vw;
-//     height: 12vh;
-//   }
-//   .invoNumberDiv {
-//     width: 20vw;
-//     height: 6vh;
-//     border-radius: 1vw;
-//     left: 3vw;
-//   }
-//   // .invonumberdata {
-//   // }
-//   .editOrSaveVtnDiv {
-//     width: 20vw;
-//     height: 6vh;
-//   }
-//   .editbtn {
-//     width: 8vw;
-//     height: 6vh;
-//     margin: 0vh 0.5vw;
-//     border-radius: 1vw;
-//   }
-//   .savebtn {
-//     width: 8vw;
-//     height: 6vh;
-//     margin: 0vh 0.5vw;
-//     border-radius: 1vw;
-//   }
-//   .maintablediv {
-//     width: 100vw;
-//     margin-top: 1vw;
-//   }
-//   .tableDatadiv {
-//     width: 80vw;
-//     margin-top: 2vh;
-//   }
-//   .tableDatadiv th,
-//   .tableDatadiv td {
-//     padding: 0.5vh 0.5vw;
-//   }
-//   .trowforheaad {
-//     height: 5.5vh;
-//     font-size: 0.95em;
-//     font-weight: 800;
-//   }
-//   // .rownumhd {
-//   // }
-//   .datehd {
-//     width: 7.5vw;
-//   }
-//   .texthead {
-//     width: 50vw;
-//   }
-//   .tikettimehd {
-//     width: 7.5vw;
-//   }
-//   .tbodycs:hover {
-//     border-radius: 1vw;
-//   }
-//   .datetd * {
-//     width: 7.5vw;
-//   }
-//   .inputediv {
-//     width: 50vw;
-//     height: 6vh;
-//   }
-//   .inputtaske {
-//     width: 50vw;
-//     height: 6vh;
-//     font-size: 1vw;
-//     font-weight: 900;
-//     padding: 1vw;
-//   }
-//   .radios {
-//     width: 7.5vw;
-//   }
-//   .bigdiv {
-//     width: 7.5vw;
-//   }
-//   .bigdiv div {
-//     margin: 0vh 1vw;
-//   }
-//   tr,
-//   td {
-//     width: 7.5vw;
-//   }
-// }
-// @media (min-width: 1920px) {
-// }
-
-//--------------------------------------------------
 .main {
   width: 100vw;
   min-height: 100vh;
@@ -452,8 +178,6 @@ onMounted(async () => {
   flex-direction: column;
   align-items: center;
 }
-
-/* ================= HEADER ================= */
 
 .headersdiv {
   width: 100vw;
@@ -472,8 +196,6 @@ onMounted(async () => {
   position: relative;
 }
 
-/* invoice */
-
 .invoNumberDiv {
   position: absolute;
   left: 1vw;
@@ -491,8 +213,6 @@ onMounted(async () => {
   font-size: 1.1vw;
   font-weight: bold;
 }
-
-/* buttons */
 
 .editOrSaveVtnDiv {
   display: flex;
@@ -526,8 +246,6 @@ onMounted(async () => {
   background: #2b2c2c;
 }
 
-/* ================= TABLE ================= */
-
 .maintablediv {
   width: 100vw;
   display: flex;
@@ -545,8 +263,6 @@ onMounted(async () => {
   overflow: hidden;
 }
 
-/* header */
-
 .theadDiv {
   background: #414242;
   color: #fff;
@@ -558,21 +274,15 @@ onMounted(async () => {
   font-weight: 800;
 }
 
-/* cells */
-
 .tableDatadiv th,
 .tableDatadiv td {
   padding: 0.8vh 0.5vw;
   text-align: center;
 }
 
-/* hover */
-
 .tbodycs:hover {
   background: #f2f2f2;
 }
-
-/* column widths */
 
 .rownumhd,
 .rownumtd {
@@ -597,8 +307,6 @@ onMounted(async () => {
 .donediv {
   width: 5vw;
 }
-
-/* ================= INPUTS ================= */
 
 .dateput {
   width: 100%;
@@ -626,8 +334,6 @@ onMounted(async () => {
   line-height: 1.4;
 }
 
-/* radios */
-
 .bigdiv {
   display: flex;
   justify-content: center;
@@ -640,8 +346,6 @@ onMounted(async () => {
   flex-direction: column;
   align-items: center;
 }
-
-/* ================= MOBILE ================= */
 
 @media (max-width: 767px) {
   .invoNumberDiv {
@@ -679,8 +383,6 @@ onMounted(async () => {
   }
 }
 
-/* ================= TABLET ================= */
-
 @media (min-width: 768px) and (max-width: 991px) {
   .tableDatadiv {
     width: 92vw;
@@ -690,8 +392,6 @@ onMounted(async () => {
     font-size: 1.8vw;
   }
 }
-
-/* ================= LARGE SCREENS ================= */
 
 @media (min-width: 1600px) {
   .tableDatadiv {

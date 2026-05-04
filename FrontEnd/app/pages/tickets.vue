@@ -10,6 +10,9 @@ definePageMeta({
       <TableData />
     </main>
     <ToogleToTop />
+    <!-- <div>
+      <DialogBox message="الجلسة على وشك الانتهاء" :doublebtn="true" />
+    </div> -->
   </div>
 </template>
 <style lang="scss" scoped>
