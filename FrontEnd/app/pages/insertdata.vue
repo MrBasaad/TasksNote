@@ -20,6 +20,8 @@ const userStore = useUserStore();
 const childRef = ref<ChildComponent | null>(null);
 const lineData = ref();
 const lastnewTicketNumber = ref(null);
+const message = ref<string>("");
+const trigerPoup = ref<boolean>(false);
 //-------------------
 
 //------------
@@ -35,7 +37,11 @@ const submitData = async () => {
     },
   });
   if (response) {
-    navigateTo(response.path);
+    trigerPoup.value = true;
+    message.value = "تم إنشاء التذكرة بنجاح";
+    setTimeout(() => {
+      navigateTo(response.path);
+    }, 2000);
   } else {
     console.error(response);
   }
@@ -53,6 +59,14 @@ onMounted(async () => {
 });
 
 //--------
+watch(trigerPoup, (newValue) => {
+  if (newValue === true) {
+    setTimeout(() => {
+      trigerPoup.value = false;
+      message.value = "";
+    }, 5000);
+  }
+});
 </script>
 <template>
   <div class="mains" @keyup.enter="submitData">
@@ -83,6 +97,9 @@ onMounted(async () => {
       <button class="sendBTN" @click="submitData">ارسال</button>
     </main>
     <ToogleToTop />
+    <div>
+      <PoupUp v-if="trigerPoup" :message="message" color="#fff" bg="green" />
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -94,7 +111,6 @@ onMounted(async () => {
   flex-direction: column;
   align-items: center;
 }
-
 
 .headersdiv {
   width: 100vw;
@@ -113,8 +129,6 @@ onMounted(async () => {
   position: relative;
 }
 
-
-
 .invoNumberDiv {
   position: absolute;
   left: 1vw;
@@ -132,8 +146,6 @@ onMounted(async () => {
   font-size: 1.1vw;
   font-weight: bold;
 }
-
-
 
 .editOrSaveVtnDiv {
   display: flex;
@@ -167,8 +179,6 @@ onMounted(async () => {
   background: #2b2c2c;
 }
 
-
-
 .maintablediv {
   width: 100vw;
   display: flex;
@@ -186,8 +196,6 @@ onMounted(async () => {
   overflow: hidden;
 }
 
-
-
 .theadDiv {
   background: #414242;
   color: #fff;
@@ -199,21 +207,15 @@ onMounted(async () => {
   font-weight: 800;
 }
 
-
-
 .tableDatadiv th,
 .tableDatadiv td {
   padding: 0.8vh 0.5vw;
   text-align: center;
 }
 
-
-
 .tbodycs:hover {
   background: #f2f2f2;
 }
-
-
 
 .rownumhd,
 .rownumtd {
@@ -238,8 +240,6 @@ onMounted(async () => {
 .donediv {
   width: 5vw;
 }
-
-
 
 .dateput {
   width: 100%;
@@ -266,8 +266,6 @@ onMounted(async () => {
   padding: 0.5vw;
   line-height: 1.4;
 }
-
-
 
 .bigdiv {
   display: flex;

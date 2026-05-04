@@ -6,26 +6,43 @@ interface Ticket {
 const userStore = useUserStore();
 const allData = ref<Ticket[]>([]);
 const isEmpth = ref(true);
+const message = ref<string>("");
+const trigerPoup = ref<boolean>(false);
 //---------------------------------
 const fetchData = async () => {
   try {
-    const response = await $fetch("/Endpoint/alldata", {
+    const response = await $fetch.raw("/Endpoint/alldata", {
       method: "POST",
       credentials: "include",
+      ignoreResponseError: true,
       body: {
         user: userStore.name,
       },
     });
-    allData.value = response;
+    if (response.status === 404) {
+      trigerPoup.value = true;
+      return (message.value = "خطاء في جلب البيانات 404");
+    }
+    if (response.status === 400) {
+      trigerPoup.value = true;
+      return (message.value = "خطاء في السيرفر 400");
+    }
+    if (response.status === 200) {
+      allData.value = response._data;
+      allData.value.sort(
+        (a: Ticket, b: Ticket) => b.ticketnumber - a.ticketnumber,
+      );
+    } else {
+      trigerPoup.value = true;
+      return (message.value = "خطاء حصلت مشكلة جديدة");
+    }
   } catch (error) {
     console.error("خطأ في جلب البيانات:", error);
   } finally {
-    allData.value.sort(
-      (a: Ticket, b: Ticket) => b.ticketnumber - a.ticketnumber,
-    );
     isEmpth.value = allData.value.length === 0;
   }
 };
+
 const addTiketNum = async () => {
   try {
     const response = await $fetch("/Endpoint/tecketnum", {
@@ -55,6 +72,15 @@ onMounted(() => {
     }
   });
   fetchData();
+});
+
+watch(trigerPoup, (newValue) => {
+  if (newValue === true) {
+    setTimeout(() => {
+      trigerPoup.value = false;
+      message.value = "";
+    }, 5000);
+  }
 });
 //-------------------
 </script>
@@ -101,6 +127,9 @@ onMounted(() => {
     <NuxtLink to="/insertdata" @click="addTiketNum"
       >يرجى النقر هنا لتبدا مسيرة ناجحة تبدا بالتدوين</NuxtLink
     >
+    <div>
+      <PoupUp v-if="trigerPoup" :message="message" color="red" bg="darkred" />
+    </div>
   </div>
 </template>
 <style lang="scss" scoped>

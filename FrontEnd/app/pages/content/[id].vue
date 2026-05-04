@@ -8,6 +8,8 @@ const userStore = useUserStore();
 const route = useRoute();
 const datas = ref<Row[]>([]);
 const isReadOnly = ref(true);
+const message = ref<string>("");
+const trigerPoup = ref<boolean>(false);
 //--------------------------
 const fetchingUpdatedData = async () => {
   const response = await $fetch("/Endpoint/getrowdata", {
@@ -41,6 +43,8 @@ const editAble = async () => {
       },
     });
     await fetchingUpdatedData();
+    trigerPoup.value = true;
+    return (message.value = "تم تحديث البيانات");
   }
 };
 const deleteTicket = async () => {
@@ -50,8 +54,12 @@ const deleteTicket = async () => {
     body: { teckitnum: route.params.id },
   });
   const data = await response;
+  trigerPoup.value = true;
+  message.value = "تم الحذف";
   if (data) {
-    navigateTo(data.path);
+    setTimeout(() => {
+      navigateTo(data.path);
+    }, 2000);
   } else {
     console.error(data.message);
   }
@@ -69,6 +77,14 @@ onMounted(async () => {
   //-----------------------
 });
 //------------------------------
+watch(trigerPoup, (newValue) => {
+  if (newValue === true) {
+    setTimeout(() => {
+      trigerPoup.value = false;
+      message.value = "";
+    }, 5000);
+  }
+});
 </script>
 <template>
   <div class="main">
@@ -166,6 +182,9 @@ onMounted(async () => {
       </table>
     </main>
     <ToogleToTop />
+    <div>
+      <PoupUp v-if="trigerPoup" :message="message" color="#fff" bg="green" />
+    </div>
   </div>
 </template>
 
