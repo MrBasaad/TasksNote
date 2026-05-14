@@ -1,0 +1,83 @@
+اولا تقسيم الملفات في الواجهة الخلفية او خلونا نبسط المصطلح الى (السيرفر) 
+ينقسم هذا المشروع في السيرفر الى المجلدات التالية 
+اولا: مجلد السيرفر
+وثانيا: مجلد المصدر
+ويتم داخل هذه الملجدين بناء السيرفر 
+حيث داخل مجلد السيرفر /servers  يحتوي على ملف تشغيل السيرفر والذي  يعتبر هو نواة الخلفية للمشروع
+/servers/index.ts
+/*----------*/
+اما ملجد المصدر /src  فهو ينقسم كذلك الى عدة مجلدات وكل مجلد يخدم هدف محدد
+/src/contollers
+هذا الملجد يحتوي على الدوال والعمليات المنطقية للبناء والحذف وغيرها وينقسم في مشروعنا هذا المجلد الى عدة تقسيمات 
+.../CreateDataBasesTablesContrllers
+هذا الملف ينشئ الجداول ويتحثث منها في قواعد البيانات
+.../CreateDataBasesTablesContrllers/dbAllTables.ts
+/*++++++++++*/
+هذا المجلد يحتوي على ملفات تخص انشاء التذاكر وعرضها 
+.../DataTablesContrllers
+هذا الملف يقوم بإنشاء api  لعد المهام التي تمت والتي لم تتم
+.../DataTablesContrllers/countDataDone.ts
+هذا الملف يقوم بانشاء api  ليضيف رقم التذكرة ويرجع رقم التذكرة الاخيرة من قاعدة البيانات
+.../DataTablesContrllers/createTeacketNumController.ts
+هذا الملف يقوم بانشاء Api  يرجع كل التذاكر الي قام باضافتها المستخدم لقاعدة البيانات
+.../DataTablesContrllers/getRowData.ts
+يقوم هذا الملف بانشاء api ليضيف التذاكر او يعدلهم او يحذفهم 
+.../DataTablesContrllers/rowDataTable.ts
+يقوم هذا الملف بانشاء api يرجع كل التذاكر مرة واحدة لكل رقم تذكرة كصف واحد مع دمج بيانات المستخدم 
+.../DataTablesContrllers/showAllData.ts
+/*++++++++++*/
+هذا المجلد يحتوي على ملفات لانشاء المستخدم وعرص بياناته وتحجيثها وكذلك ينشى المفتاح الخاص بالجلسة
+.../JWTAuthContrllers
+يقوم هذا الملف بالتحقق من التوكن اذا كان موجود يرجعه واذا مش موجود يرجع رسالة
+/JWTAuthContrllers/isAuth.ts
+هذا الملف بالخروج وحذف البيانات من الكوكي ومن قاعدة البيانات
+.../JWTAuthContrllers/logoutController.ts
+يقوم هذا الملف بالتحقق عبر isAuth  واذا كان تمام يرجع بيانات المستخدم واذا لا يرجع رسالة
+.../JWTAuthContrllers/meController.ts
+هذا الملف يقوم بالتحقق من المستخدم عبر isAuth اذا ارجع انه صحيح يرجع رسالة انه محمي والعكس كذلك 
+.../JWTAuthContrllers/protectecController.ts
+هذا الملف يقوم بالتحقق من التوكن الاضافي واذا كان غير موجود يحدث التوكن الى فارغ واذا كان موجود يتحقق منه مع الموجود لدينا بالمفتاح الخاص فإذا تطابق  يتحقق من قاعدة البيانات اذا المستخدم ومعرفه موجودين في قاعدة البيانات 
+إذا غير موجود يرجع نص فارغ ولكن اذا موجود يقوم بعدة تحققات ثم في الاخير ينشئ التوكن  والتوكن الثانوي كذلك ويرسل التوكن الاساي الى الهيدر والثانوي الى قاعدة البيانات
+.../JWTAuthContrllers/refresTokenController.ts
+هذا الملف يقوم بالتحقق من المدخلات لتسجيل الدخول فاذا تطابقة الاسماء والرموز  يتحقق ويطابق كلمة المرور المشفرة مع المرسلة اذا تطابقة 
+ينشئ توكن اساسي وثانوي ويرسلهم ويعيد تحويل المستخدم لراوت محدد واذا لم يكن كذلك يعيد رسالة نصية
+.../JWTAuthContrllers/singinController.ts
+هذا الملف يقوم بانشاء الدوال الخاص بالتوكن وطرق ارسالها وصفاتها التوكن الرئيسي والثانوي
+.../JWTAuthContrllers/tokens.ts
+هذا الملف يقوم بانشاء المستخدم ويضيفه الى قاعدة البيانات ويحدث بياناته ويحذفها ويرجع رسالة اذا في اي مشكلة 
+.../JWTAuthContrllers/userController.ts
+هذا يقوم بالتحقق من المستخدم ويرجع رقم المعرف للمستخدم واذا في اي مشكلة يرجع رسالة
+.../JWTAuthContrllers/userIdController.ts
+/*----------*/
+/*----------*/
+هذا المجلد يحتوي على التواصل مع  قواعد البيانات 
+/src/models
+هذا الملف يقوم بنشاء اتصال بقاعدة البيانات 
+.../models/db.ts
+/*----------*/
+هذا المجلد يحتوي على الموجهات 
+/src/routes
+/*++++++++++*/
+هذا المجلد يحتوي على موجهات لعرض البيانات واضافتها
+.../routes/DataTablesRoutes
+.../DataTablesRoutes/createTeacktNumRoutes.ts
+.../DataTablesRoutes/getCountDataRoutes.ts
+.../DataTablesRoutes/getRowDataRoutes.ts
+.../DataTablesRoutes/rowDataTableRoutes.ts
+/DataTablesRoutes/showAllDataRoutes.ts
+/*++++++++++*/
+هذا المجلد يحتوي على موجهات تسجيل الدخول والتوكنات
+.../routes/JWTAuthRoutes
+.../JWTAuthRoutes/logoutRoutes.ts
+.../JWTAuthRoutes/meRoutes.ts
+.../JWTAuthRoutes/protectedRoutes.ts
+.../JWTAuthRoutes/refreshTokenRoutes.ts
+.../JWTAuthRoutes/singinRoutes.ts
+.../JWTAuthRoutes/userIdRoutes.ts
+.../JWTAuthRoutes/userRoutes.ts
+/*----------*/
+هذا المجلد يحتوي على انواع البيانات
+/src/types
+هذا الملف يحتوي على انواع بيانات المستخدم
+.../types/userPayload.ts
+/*----------*/

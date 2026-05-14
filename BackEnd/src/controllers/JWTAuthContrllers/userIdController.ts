@@ -2,6 +2,7 @@ import type { QueryResult } from "pg";
 import pool from "@models/db";
 import { type Request,type Response }from "express";
 import { error } from "console";
+// هذي الدالة ترجع معرف المستخدم من قاعدة البيانات
 export const getUserId = async (req:Request, res:Response) => {
     try {
         const { username } = await req.body;

@@ -2,7 +2,7 @@ import pool from "@models/db";
 import type { QueryResult } from "pg";
 export const createDB = async ()=>{
     try{
-        const dbName:string = "dailynotes";
+        const dbName:string = "dailynotes"; // اسم قاعدة البيانات
         const isDBExists:QueryResult = await pool.query(`SELECT EXISTS (SELECT 1 FROM pg_database WHERE datname = '${dbName}');`);
         if(!isDBExists.rows[0].exists){
             await console.log("this DataBasd not exists wait until I create it .");
@@ -19,7 +19,7 @@ export const createDB = async ()=>{
 }
 export const createDBUserTable = async ()=>{
  try {
-    const tableName: string = "users";
+    const tableName: string = "users"; // إنشاء جدول للمستخدمين
     const isUSerTableDBCreated:QueryResult = await pool.query(`SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_schema = 'public' AND table_name = '${tableName}');`);
         if(!isUSerTableDBCreated.rows[0].exists){
             await console.log("this tables is not exists wait until I create it .");
@@ -37,7 +37,7 @@ export const createDBUserTable = async ()=>{
 }
 export const createDBTicketTable = async ()=>{
  try {
-    const tableName: string = "tacketid";
+    const tableName: string = "tacketid"; // إنشاء جدول تسلسل التذاكر
     const isUSerTableDBCreated:QueryResult = await pool.query(`SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_schema = 'public' AND table_name = '${tableName}');`);
         if(!isUSerTableDBCreated.rows[0].exists){
             await console.log(`this tables is ${tableName} not exists wait until I create it .`);
@@ -58,7 +58,7 @@ export const createDBTicketTable = async ()=>{
 }
 export const createTikectDataTable = async ()=>{
  try {
-    const tableName:string = "tacketdata";
+    const tableName:string = "tacketdata"; // إنشاء جدول بيانات التذاكر
     const isUSerTableDBCreated:QueryResult = await pool.query(`SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_schema = 'public' AND table_name = '${tableName}');`);
         if(!isUSerTableDBCreated.rows[0].exists){
             await console.log(`this tables ${tableName} is not exists wait until I create it .`);
@@ -76,7 +76,7 @@ export const createTikectDataTable = async ()=>{
 }
 export const createIsTikectDoneTable = async ()=>{
  try {
-    const tableName:string = "istikectdone";
+    const tableName:string = "istikectdone"; // إنشاء جدول إذا تم اغلاق التذكرة
     const isUSerTableDBCreated:QueryResult = await pool.query(`SELECT EXISTS (SELECT FROM information_schema.tables WHERE table_schema = 'public' AND table_name = '${tableName}');`);
         if(!isUSerTableDBCreated.rows[0].exists){
             await console.log(`this tables is ${tableName} not exists wait until I create it .`);
